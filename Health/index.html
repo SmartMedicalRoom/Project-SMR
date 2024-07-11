@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mental Health Form</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@100..900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Noto Sans Thai", sans-serif;
+        }
+
+        body {
+            background-color: #E4FBFF;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            flex-direction: column;
+        }
+
+        .response {
+            background-color: #494b59;
+        }
+
+        .nav_bar {
+            width: 100%;
+            height: 80px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: center;
+            background-color: white;
+        }
+
+        .nav_bar h2 {
+            position: relative;
+        }
+
+        .nav_bar ul {
+            display: flex;
+        }
+
+        .nav_bar ul li {
+            list-style: none;
+        }
+
+        .nav_bar ul li a {
+            text-decoration: none;
+            color: #333;
+            padding: 15px 30px;
+            text-transform: uppercase;
+            transition: .3s ease;
+            letter-spacing: 2px;
+        }
+
+        ul li a:hover {
+            color: gray;
+        }
+
+        .btn-signin {
+            background: linear-gradient(45deg, #3498db, #8e44ad);
+            color: #fff;
+            border-radius: 5px;
+        }
+
+        .btn-signin:hover {
+            color: white;
+        }
+
+        .header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 15px;
+            text-align: center;
+        }
+
+
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            margin-top: 10px;
+            color: #555;
+        }
+        input, textarea {
+            margin-top: 5px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+        
+        @media (max-width: 768px) {
+            .nav_bar ul {
+                flex-direction: column;
+            }
+
+            .nav_bar ul li a {
+                padding: 10px;
+            }
+
+            .container {
+                width: 100%;
+                padding: 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .nav_bar {
+                flex-direction: column;
+                height: auto;
+            }
+
+            .nav_bar h2 {
+                margin-bottom: 10px;
+            }
+
+            .nav_bar ul {
+                align-items: center;
+            }
+
+            button {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <nav class="nav_bar">
+            <h2>SMART MEDICAL ROOM</h2>
+            <ul>
+                <li><a href="../Appointment/index.php">ขอรับยา</a></li>
+                <li><a href="../BMi/index.php">เทคแคร์</a></li>
+                <li><a href="#">คลินิครักษ์ยิ้ม</a></li>
+                <li><a href="../Volunteer/volunteer.php">ข่าวสารและกิจกรรม</a></li>
+                <li><a href="../Problem/add-new.php">รายงานปัญหา</a></li>
+                <li><a href="../Register/register.php">ข้อมูลนักเรียน</a></li>
+                <li><a href="../login_page/home.php" class="btn-signin">HOME</a></li>
+            </ul>
+        </nav>
+    </div>
+    <div class="container">
+        <h2>คลินิครักษ์ยิ้ม</h2>
+        <form id="healthForm" action="submit_form.php" method="POST">
+            <label for="alias">นามแฝง:</label>
+            <input type="text" id="alias" name="alias" required>
+
+            <label for="age">อายุ:</label>
+            <input type="number" id="age" name="age" required>
+
+            <label for="symptoms">อาการ:</label>
+            <textarea id="symptoms" name="symptoms" required></textarea>
+
+            <label for="phone">เบอร์โทรศัพท์:</label>
+            <input type="tel" id="phone" name="phone" required pattern="[0-9]{10}">
+
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+    <script>
+        document.getElementById('healthForm').addEventListener('submit', function(event) {
+            const phone = document.getElementById('phone').value;
+            if (!/^\d{10}$/.test(phone)) {
+                alert('Please enter a valid 10-digit phone number.');
+                event.preventDefault();
+            }
+        });
+    </script>
+</body>
+</html>
