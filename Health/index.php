@@ -18,12 +18,18 @@
         }
 
         body {
-            background-color: #E4FBFF;
+            
+            background-image: url('picture.jpg'); /* เปลี่ยน path เป็นที่อยู่ของไฟล์ภาพ */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            backdrop-filter: blur(4px);
+            height: 100vh;
+            width: 100vw;
+            overflow: hidden;
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
-            margin: 0;
             flex-direction: column;
         }
 
@@ -43,8 +49,7 @@
         }
 
         .nav_bar h2 {
-            font-size: 24px;
-            color: #333;
+            color: #3498db;
         }
 
         .nav_bar ul {
@@ -115,9 +120,9 @@
         <nav class="nav_bar">
             <h2>SMART MEDICAL ROOM</h2>
             <ul>
-                <li><a href="../Appointment/index.php">ขอรับยา</a></li>
+                <li><a href="../Appointment/index.php">ขอรับบริการ</a></li>
                 <li><a href="../BMi/index.php">เทคแคร์</a></li>
-                <li><a href="../Health/index.html">คลินิครักษ์ยิ้ม</a></li>
+                <li><a href="../Health/index.html">คลินิกรักษ์ยิ้ม</a></li>
                 <li><a href="../Volunteer/volunteer.php">ข่าวสารและกิจกรรม</a></li>
                 <li><a href="../Problem/add-new.php">รายงานปัญหา</a></li>
                 <li><a href="../Register/register.php">ข้อมูลนักเรียน</a></li>
@@ -126,10 +131,10 @@
         </nav>
     </div>
     <div class="container">
-        <h2>คลินิครักษ์ยิ้ม</h2>
+        <h2>คลินิกรักษ์ยิ้ม</h2>
         <img src="images.png" alt="QR Code">
         <p>สามารถเข้ารับคำปรึกษาคลินิครักษ์ยิ้มได้โดยแสกนคิวอาโค้ดนี้ </p>
-        <p>และสามารถขอติดต่อผู้เชี่ยวชาญได้โดยพิม ฉันต้องการติดต่อคลินิครักษ์ยิ้ม</p>
+        <p>และสามารถขอติดต่อผู้เชี่ยวชาญได้โดยพิมพ์ ฉันต้องการติดต่อคลินิครักษ์ยิ้ม</p>
     </div>
 </body>
 

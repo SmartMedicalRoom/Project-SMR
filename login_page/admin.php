@@ -83,15 +83,13 @@
     }
 
     .container__left {
-      background-image: url('room.webp');
-      background-position: center;
+      background-image: url('picture.jpg'); 
       background-repeat: no-repeat;
       background-size: cover;
       display: flex;
       align-items: center;
       justify-content: center;
       text-align: center;
-      background-color: var(--primary-color-dark); /* Maintain background color tone */
     }
 
     .container__right {
@@ -236,7 +234,10 @@ nav {
 .right__content h1 {
   font-size: 5rem;
 }
-
+.left__content h4 {
+      position: relative;
+      top: -180px;
+      }
 .right__content h4 {
   font-size: 3rem;
 }
@@ -303,7 +304,7 @@ nav {
       <div class="container__right">
         <div class="right__content">
           <h1>SMR</h1>
-          <h4>Smart medical Room </h4>
+          <h4>Smart Medical Room </h4>
           <h4>For Admin</h4>
           <p>
           ระบบการจัดการข้อมูลในห้องพยาบาลที่ใช้เทคโนโลยีอัจฉริยะเพื่อเพิ่มประสิทธิภาพในการบริการด้านสุขภาพและการจัดการข้อมูลทางการแพทย์ ระบบนี้ช่วยให้นักเรียนและบุคลากรสามารถเข้าถึงข้อมูลสุขภาพได้ง่ายขึ้น 

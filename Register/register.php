@@ -17,6 +17,21 @@
             box-sizing: border-box;
             font-family: "Noto Sans Thai", sans-serif;
         }
+        html, body {
+            min-height: 100vh;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            overflow: auto;
+        }
+       
+        body {
+            background-image: url('picture.jpg'); /* เปลี่ยน path เป็นที่อยู่ของไฟล์ภาพ */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            backdrop-filter: blur(4px);
+        }
 
         .nav_bar {
             width: 100%;
@@ -27,7 +42,9 @@
             align-items: center;
             background-color: white;
         }
-
+        .nav_bar h2{
+            color: #3498db;
+        }
         .nav_bar ul {
             display: flex;
         }
@@ -57,10 +74,6 @@
 
         .btn-signin:hover {
             color: white;
-        }
-
-        body {
-            background-color: #E4FBFF;
         }
 
         .hearder {
@@ -127,9 +140,9 @@
             <h2>SMART MEDICAL ROOM</h2>
 
             <ul>
-                <li><a href="../Appointment/index.php">ขอรับยา</a></li>
+                <li><a href="../Appointment/index.php">ขอรับบริการ</a></li>
                 <li><a href="../BMi/index.php">เทคแคร์</a></li>
-                <li><a href="../Health/index.html">คลินิครักษ์ยิ้ม</a></li>
+                <li><a href="../Health/index.html">คลินิกรักษ์ยิ้ม</a></li>
                 <li><a href="../Volunteer/volunteer.php">ข่าวสารและกิจกรรม</a></li>
                 <li><a href="../Problem/add-new.php">รายงานปัญหา</a></li>
                 <li ><a href="../Register/register.php">ข้อมูลนักเรียน</a></li>
@@ -156,7 +169,7 @@
             <input type="text" id="organization" name="organization" required><br><br>
             <label for="position">ตำแหน่ง :</label>
             <input type="text" id="position" name="position" required><br><br>
-            <input type="submit" value="Register">
+            <input type="submit" value="ส่งแบบฟอร์ม">
         </form>
     </div>
 </body>

@@ -19,7 +19,14 @@
         }
 
         body {
-            background-color: #E4FBFF;
+            background-image: url('picture.jpg'); /* เปลี่ยน path เป็นที่อยู่ของไฟล์ภาพ */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            backdrop-filter: blur(3px);
+            height: 100vh;
+            width: 100vw;
+            overflow: hidden;
         }
 
         .nav_bar {
@@ -74,13 +81,16 @@
 
         .navbar {
             background-color: rgba(202, 247, 251, 0.3);
-            color: gray;
+            color: white;
             padding: 20px;
             text-align: center;
         }
 
         .navbar h1 {
-            text-shadow: 2px 2px 4px white;
+            position: relative;
+            left: 50px;
+            font-size: 25px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
         }
 
         .container {
@@ -185,9 +195,9 @@
                 <thead>
                     <tr class="try">
                         <th class="tim">ID</th>
-                        <th class="tim">Name</th>
-                        <th class="tim">Lastname</th>
-                        <th class="tim">Tel</th>
+                        <th class="tim">ชื่อ</th>
+                        <th class="tim">นามสกุล</th>
+                        <th class="tim">เบอร์โทรศัพท์</th>
                     </tr>
                 </thead>
             </div>

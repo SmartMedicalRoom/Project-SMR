@@ -28,22 +28,22 @@
             box-sizing: border-box;
             font-family: "Noto Sans Thai", sans-serif;
         }
-        body {
-            background-color: #E4FBFF;
-        }
-
         .nav_bar {
-            
             display: flex;
             flex-direction: row;
             justify-content: space-around;
             align-items: center;
             background-color: white;
+           height: 80px;
         }
         .nav_bar ul {
             display: flex;
         }
-
+        .nav_bar h2 {
+            position: relative;
+            top: 10px;
+            color: #3498db;
+        }
         .nav_bar ul li {
             list-style: none;
         }
@@ -75,10 +75,10 @@
        
 
         body {
-            font-family: 'Noto Sans Thai', sans-serif;
-            background-color: #f5f5f5;
-            margin: 0;
-            padding: 0;
+            background-image: url('picture.jpg'); /* เปลี่ยน path เป็นที่อยู่ของไฟล์ภาพ */
+            background-size: cover;
+            background-repeat: no-repeat;
+            backdrop-filter: blur(6px);
         }
 
         .container {
@@ -207,9 +207,11 @@
             margin-bottom: 40px;
         }
 
-        h2 {
+        section h2 {
             padding-bottom: 5px;
             margin-bottom: 20px;
+            color: #ddd;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
         }
 
         .event {
@@ -257,9 +259,9 @@
             <h2>SMART MEDICAL ROOM</h2>
 
             <ul>
-                <li><a href="../Appointment/index.php">ขอรับยา</a></li>
+                <li><a href="../Appointment/index.php">ขอรับบริการ</a></li>
                 <li><a href="../BMi/index.php">เทคแคร์</a></li>
-                <li><a href="../Health/index.html">คลินิครักษ์ยิ้ม</a></li>
+                <li><a href="../Health/index.html">คลินิกรักษ์ยิ้ม</a></li>
                 <li><a href="../Volunteer/volunteer.php">ข่าวสารและกิจกรรม</a></li>
                 <li><a href="../Problem/add-new.php">รายงานปัญหา</a></li>
                 <li><a href="../Register/register.php">ข้อมูลนักเรียน</a></li>
@@ -273,9 +275,9 @@
     <nav>
         <select id="activity-select" onchange="navigateToSection()">
             <option value="">เลือกกิจกรรม</option>
-            <optgroup label="กิจกรรมอาสา">
-                <option value="volunteer1">อาสาพัฒนาชุมชน</option>
-                <option value="volunteer2">อาสาสอนหนังสือ</option>
+            <optgroup label="ข่าวสารทางการแพทย์">
+                <option value="volunteer1">ฉีดวัคซีนไข้หวัดใหญ่</option>
+                <option value="volunteer2">บริจาคเลือด</option>
             </optgroup>
             <optgroup label="กิจกรรมฝึกงาน">
                 <option value="internship1">ฝึกงานที่บริษัท ABC</option>
@@ -289,27 +291,27 @@
     </nav>
     <main>
         <section id="volunteer">
-            <h2>กิจกรรมอาสา</h2>
+            <h2>ข่าวสารทางการแพทย์</h2>
             <div class="event" id="volunteer1">
-                <img src="images3.webp" alt="อาสาพัฒนาชุมชน">
-                <h3>อาสาพัฒนาชุมชน</h3>
-                <p>การปลูกต้นไม้ และกิจกรรมทำความสะอาดชุมชน</p>
+                <img src="./images/images7.webp" alt="อาสาพัฒนาชุมชน">
+                <h3>ฉีดวัคซีนไข้หวัดใหญ่</h3>
+                <p>วัคซีนป้องกันไข้หวัดใหญ่ ปี 2567 พร้อมให้บริการ</p>
             </div>
             <div class="event" id="volunteer2">
-                <img src="images4.webp" alt="อาสาสอนหนังสือ">
-                <h3>อาสาสอนหนังสือ</h3>
-                <p>จัดการเรียนการสอนในโรงเรียนหรือศูนย์การเรียนรู้ต่างๆ เช่น สอนหนังสือเด็ก</p>
+                <img src="./images/images8.webp" alt="อาสาสอนหนังสือ">
+                <h3>บริจาคเลือด</h3>
+                <p>ขอเชิญชวนเข้าร่วมบริจาคโลหิต โรงพยาบาลบ้านนาสาร</p>
             </div>
         </section>
         <section id="internship">
             <h2>กิจกรรมฝึกงาน</h2>
             <div class="event" id="internship1">
-                <img src="images6.webp" alt="ฝึกงานที่บริษัท ABC">
+                <img src="./images/images6.webp" alt="ฝึกงานที่บริษัท ABC">
                 <h3>ฝึกงานที่บริษัท ABC</h3>
                 <p>เรียนรู้และพัฒนาทักษะทางวิชาชีพที่สอดคล้องกับสาขาวิชาที่ศึกษา , สัมผัสประสบการณ์การทำงานในสภาพแวดล้อมจริง</p>
             </div>
             <div class="event" id="internship2">
-                <img src="images5.webp" alt="ฝึกงานในโรงพยาบาล">
+                <img src="./images/images5.webp" alt="ฝึกงานในโรงพยาบาล">
                 <h3>ฝึกงานในโรงพยาบาล</h3>
                 <p>สัมผัสประสบการณ์การทำงานในสภาพแวดล้อมจริงของโรงพยาบาล</p>
             </div>
@@ -317,12 +319,12 @@
         <section id="external">
             <h2>กิจกรรมจากภายนอก</h2>
             <div class="event" id="external1">
-                <img src="images1.webp" alt="งานสัมมนาวิชาการ">
+                <img src="./images/images1.webp" alt="งานสัมมนาวิชาการ">
                 <h3>งานสัมมนาวิชาการ</h3>
                 <p>ส่งเสริมการแลกเปลี่ยนข้อมูลและความรู้ใหม่ๆ ระหว่างนักวิชาการ ผู้เชี่ยวชาญ และผู้เข้าร่วม</p>
             </div>
             <div class="event" id="external2">
-                <img src="images2.webp" alt="งานแสดงสินค้านวัตกรรม">
+                <img src="./images/images2.webp" alt="งานแสดงสินค้านวัตกรรม">
                 <h3>งานแสดงสินค้านวัตกรรม</h3>
                 <p>ปิดโอกาสให้ผู้เข้าร่วมได้แลกเปลี่ยนประสบการณ์จากการวิจัยหรือการปฏิบัติงานจริง</p>
             </div>

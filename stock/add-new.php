@@ -29,13 +29,11 @@ if (isset($_POST["submit"])) {
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-   <!-- Bootstrap -->
    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-
-   <!-- Font Awesome -->
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@100..900&display=swap" rel="stylesheet">
    <title>ข้อมูลยาภายในคลังยา</title>
 </head>
 <style>
@@ -47,71 +45,94 @@ if (isset($_POST["submit"])) {
    }
 
    body {
-      background-color: #E4FBFF;
+      background-image: url('picture.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      backdrop-filter: blur(3px);
+      height: 100vh;
+      width: 100vw;
+      overflow: hidden;
    }
 
-   .nav_bar {
+   body {
+      background-image: url('picture.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      backdrop-filter: blur(3px);
+      height: 100vh;
+      width: 100vw;
+      overflow: hidden;
+    }
+
+    .nav_bar {
       width: 100%;
       height: 80px;
       display: flex;
-      flex-direction: row;
-      justify-content: space-around;
+      justify-content: space-between;
       align-items: center;
       background-color: white;
-   }
+      padding: 0 50px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
 
-   .nav_bar ul {
+    .nav_bar h2 {
+      font-size: 25px;
+      font-weight: 800;
+      color: #3498db;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+    }
+
+    .nav_bar ul {
       display: flex;
-   }
-
-   .nav_bar ul li {
       list-style: none;
-   }
+    }
 
-   .nav_bar ul li a {
+    .nav_bar ul li {
+      margin-left: 20px;
+    }
+
+    .nav_bar ul li a {
       text-decoration: none;
       color: #333;
-      padding: 15px 30px;
+      padding: 10px 20px;
       text-transform: uppercase;
-      transition: .3s ease;
-      letter-spacing: 2px;
-   }
+      transition: color 0.3s ease;
+      letter-spacing: 1px;
+    }
 
-   ul li a:hover {
-      color: gray;
-   }
-
-   .btn-signin {
-      background: linear-gradient(45deg, #3498db, #8e44ad);
-      color: #fff;
-      border-radius: 5px;
-   }
-
-   .navbar{
-      background-color:rgb(202, 247, 251 ,0.3);
+    .nav_bar ul li a:hover {
       color: gray;
     }
-    .navbar h1{
+
+    .btn-signin {
+      background: linear-gradient(45deg, #3498db, #8e44ad);
+      color: white;
+      border-radius: 5px;
+      padding: 10px 20px;
+      transition: background 0.3s ease;
+    }
+
+    .btn-signin:hover {
+      background: linear-gradient(45deg, #8e44ad, #3498db);
+    }
+    .head {
+      background-color: rgba(202, 247, 251, 0.3);
+      padding: 10px;
+    
+    }
+    .head h1 {
+      font-size: 28px;
+      color: white;
       position: relative;
       left: 630px;
-      text-shadow: 2px 2px 4px white;
-    }
-   .btn-signin:hover {
-      color: white;
-   }
-
-   .background {
-      background-color: rgb(202, 247, 251, 0.3);
-   }
-
-   .container {
-      margin-top: 20px;
-      background-color: white;
-      border-radius: 5px;
-      box-shadow: 2px 2px 2px 1px rgb(0 0 0 / 20%);
+      top: 8px;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     }
 
    .container {
+      padding: 10px;
       background-color: white;
       position: relative;
       top: 20px;
@@ -146,20 +167,20 @@ if (isset($_POST["submit"])) {
       <ul>
          <li class="link"><a href="../Show_data/showdata.php">ข้อมูลบุคลากร</a></li>
          <li class="link"><a href="../stock/index.php">ข้อมูลคลังยา</a></li>
-         <li class="link"><a href="#">แจ้งปัญหา</a></li>
-         <li class="link"><a href="#">เคสล่าสุด</a></li>
-         <li><a href="../Admin_page/index.php" class="btn-signin">HOME</a></li>
+         <li class="link"><a href="../Problem/index.php">แจ้งปัญหา</a></li>
+         <li class="link"><a href="../Health/addnew.php">เคสล่าสุด</a></li>
+         <li><a href="../login_page/admin.php" class="btn-signin">HOME</a></li>
       </ul>
    </nav>
    <div class="background">
-      <section class="navbar">
+      <section class="head">
          <h1>ข้อมูลยาภายในคลังยา</h1>
       </section>
    </div>
 
    <div class="container">
       <div class="text-center mb-4">
-         <h3>Add New</h3>
+         <h3>เพิ่มข้อมูลคลังยา</h3>
          <p class="text-muted">กรอกข้อมูลด้านล่างเพื่อเพิ่มข้อมูลในคลังยา</p>
       </div>
 

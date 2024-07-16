@@ -33,7 +33,15 @@ if ($conn->connect_error) {
         }
 
         body {
-            background-color: #E4FBFF;
+            background-image: url('picture.jpg');
+            /* เปลี่ยน path เป็นที่อยู่ของไฟล์ภาพ */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            backdrop-filter: blur(4px);
+            height: 100vh;
+            width: 100vw;
+            overflow: hidden;
         }
 
         .nav_bar {
@@ -86,11 +94,21 @@ if ($conn->connect_error) {
             background: linear-gradient(45deg, #2980b9, #8e44ad);
         }
 
-        .navbar h1 {
-            text-align: center;
-            margin: 20px 0;
-            color: #3498db;
+        .head {
+            background-color: rgba(202, 247, 251, 0.3);
+            padding: 10px;
+
         }
+
+        .head h1 {
+            font-size: 28px;
+            color: white;
+            position: relative;
+            left: 630px;
+            top: 8px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
 
         .box {
             width: 80%;
@@ -133,7 +151,8 @@ if ($conn->connect_error) {
             border-collapse: collapse;
         }
 
-        th, td {
+        th,
+        td {
             padding: 10px;
             text-align: left;
             border-bottom: 1px solid #ddd;
@@ -151,19 +170,19 @@ if ($conn->connect_error) {
 </head>
 
 <body>
-<nav class="nav_bar">
+    <nav class="nav_bar">
 
-<h2>SMART MEDICAL ROOM</h2>
+        <h2>SMART MEDICAL ROOM</h2>
 
-<ul>
-    <li class="link"><a href="../Show_data/showdata.php">ข้อมูลบุคลากร</a></li>
-    <li class="link"><a href="../stock/index.php">ข้อมูลคลังยา</a></li>
-    <li class="link"><a href="../Problem/index.php">แจ้งปัญหา</a></li>
-    <li class="link"><a href="../Health/addnew.php">เคสล่าสุด</a></li>
-    <li><a href="../login_page/admin.php" class="btn-signin">HOME</a></li>
-</ul>
-</nav>
-    <section class="navbar">
+        <ul>
+            <li class="link"><a href="../Show_data/showdata.php">ข้อมูลบุคลากร</a></li>
+            <li class="link"><a href="../stock/index.php">ข้อมูลคลังยา</a></li>
+            <li class="link"><a href="../Problem/index.php">แจ้งปัญหา</a></li>
+            <li class="link"><a href="../Health/addnew.php">เคสล่าสุด</a></li>
+            <li><a href="../login_page/admin.php" class="btn-signin">HOME</a></li>
+        </ul>
+    </nav>
+    <section class="head">
         <h1>ข้อมูลบุคลากรและนักเรียน</h1>
     </section>
 

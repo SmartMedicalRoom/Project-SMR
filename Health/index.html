@@ -15,15 +15,17 @@
             box-sizing: border-box;
             font-family: "Noto Sans Thai", sans-serif;
         }
-
         body {
-            background-color: #E4FBFF;
-            justify-content: center;
-            align-items: center;
+            background-image: url('picture.jpg'); /* เปลี่ยน path เป็นที่อยู่ของไฟล์ภาพ */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            backdrop-filter: blur(4px);
             height: 100vh;
-            margin: 0;
-            flex-direction: column;
+            width: 100vw;
+            overflow: hidden;
         }
+
 
         .response {
             background-color: #494b59;
@@ -40,7 +42,7 @@
         }
 
         .nav_bar h2 {
-            position: relative;
+            color: #3498db;
         }
 
         .nav_bar ul {
@@ -167,9 +169,9 @@
         <nav class="nav_bar">
             <h2>SMART MEDICAL ROOM</h2>
             <ul>
-                <li><a href="../Appointment/index.php">ขอรับยา</a></li>
+                <li><a href="../Appointment/index.php">ขอบริการ</a></li>
                 <li><a href="../BMi/index.php">เทคแคร์</a></li>
-                <li><a href="#">คลินิครักษ์ยิ้ม</a></li>
+                <li><a href="#">คลินิกรักษ์ยิ้ม</a></li>
                 <li><a href="../Volunteer/volunteer.php">ข่าวสารและกิจกรรม</a></li>
                 <li><a href="../Problem/add-new.php">รายงานปัญหา</a></li>
                 <li><a href="../Register/register.php">ข้อมูลนักเรียน</a></li>
@@ -192,7 +194,7 @@
             <label for="phone">เบอร์โทรศัพท์:</label>
             <input type="tel" id="phone" name="phone" required pattern="[0-9]{10}">
 
-            <button type="submit">Submit</button>
+            <button type="submit">ส่งแบบฟอร์ม</button>
         </form>
     </div>
     <script>

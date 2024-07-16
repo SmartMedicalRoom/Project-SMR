@@ -28,56 +28,81 @@ include "db_conn.php";
     }
 
     body {
-      background-color: #E4FBFF;
-    }
-
-    .nav_bar {
+            background-image: url('picture.jpg'); /* เปลี่ยน path เป็นที่อยู่ของไฟล์ภาพ */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            backdrop-filter: blur(4px);
+            height: 100vh;
+            width: 100vw;
+            overflow: hidden;
+        }
+    
+        .nav_bar {
       width: 100%;
       height: 80px;
       display: flex;
-      flex-direction: row;
-      justify-content: space-around;
+      justify-content: space-between;
       align-items: center;
       background-color: white;
+      padding: 0 50px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     }
+
+    .nav_bar h2 {
+      font-size: 25px;
+      font-weight: 800;
+      color: #3498db;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+    }
+
     .nav_bar ul {
       display: flex;
+      list-style: none;
     }
 
     .nav_bar ul li {
-      list-style: none;
+      margin-left: 20px;
     }
 
     .nav_bar ul li a {
       text-decoration: none;
       color: #333;
-      padding: 15px 30px;
+      padding: 10px 20px;
       text-transform: uppercase;
-      transition: .3s ease;
-      letter-spacing: 2px;
+      transition: color 0.3s ease;
+      letter-spacing: 1px;
     }
 
-    ul li a:hover {
+    .nav_bar ul li a:hover {
       color: gray;
     }
 
     .btn-signin {
       background: linear-gradient(45deg, #3498db, #8e44ad);
-      color: #fff;
-      border-radius: 5px;
-    }
-    .navbar{
-      background-color:rgb(202, 247, 251 ,0.3);
-      color: gray;
-    }
-    .btn-signin:hover {
       color: white;
+      border-radius: 5px;
+      padding: 10px 20px;
+      transition: background 0.3s ease;
     }
-    .navbar h1{
+
+    .btn-signin:hover {
+      background: linear-gradient(45deg, #8e44ad, #3498db);
+    }
+    .head {
+      background-color: rgba(202, 247, 251, 0.3);
+      padding: 10px;
+    
+    }
+    .head h1 {
+      font-size: 28px;
+      color: white;
       position: relative;
-      left: 630px;
-      text-shadow: 2px 2px 4px white;
+      left: 700px;
+      top: 8px;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     }
+
     .container {
       margin-top: 20px;
       background-color: aliceblue;
@@ -115,7 +140,7 @@ include "db_conn.php";
         <li><a href="../login_page/admin.php" class="btn-signin">HOME</a></li>
     </ul>
   </nav>
-  <section class="navbar">
+  <section class="head">
     <h1>รายงานปัญหา</h1>
   </section>
 

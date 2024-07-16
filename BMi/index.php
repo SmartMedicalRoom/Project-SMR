@@ -81,12 +81,14 @@ $conn->close();
         }
 
         body {
-            background-color: #E4FBFF;
-            justify-content: center;
-            align-items: center;
+            background-image: url('picture.jpg'); /* เปลี่ยน path เป็นที่อยู่ของไฟล์ภาพ */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            backdrop-filter: blur(4px);
             height: 100vh;
-            margin: 0;
-            flex-direction: column;
+            width: 100vw;
+            overflow: hidden;
         }
 
         .response {
@@ -104,7 +106,7 @@ $conn->close();
         }
 
         .nav_bar h2 {
-            position: relative;
+            color: #3498db;
         }
 
         .nav_bar ul {
@@ -222,9 +224,11 @@ $conn->close();
             font-weight: 600;
             color: #fff;
         }
-        .BMI{
+
+        .BMI {
             font-weight: 500;
         }
+
         @media (max-width: 768px) {
             .nav_bar ul {
                 flex-direction: column;
@@ -268,7 +272,7 @@ $conn->close();
             <h2>SMART MEDICAL ROOM</h2>
 
             <ul>
-                <li><a href="../Appointment/index.php">ขอรับยา</a></li>
+                <li><a href="../Appointment/index.php">ขอรับบริการ</a></li>
                 <li><a href="../BMi/index.php">เทคแคร์</a></li>
                 <li><a href="../Health/index.html">คลินิครักษ์ยิ้ม</a></li>
                 <li><a href="../Volunteer/volunteer.php">ข่าวสารและกิจกรรม</a></li>
@@ -293,7 +297,7 @@ $conn->close();
             <label for="weight">น้ำหนัก (กก.):</label>
             <input type="number" id="weight" name="weight" required>
 
-            <input type="submit" value="Calculate BMI">
+            <input type="submit" value="คำนวณค่าดัชนีมวลกาย">
             <?php if (!empty($success_message)) {
                 echo "<p class='success'>$success_message</p>";
             } ?>

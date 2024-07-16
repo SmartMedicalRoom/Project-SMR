@@ -39,7 +39,7 @@
     }
 
     .nav_bar h2 {
-        position: relative;
+        color: #3498db;
     }
 
     .nav_bar ul {
@@ -150,20 +150,20 @@
             <h2>SMART MEDICAL ROOM</h2>
 
             <ul>
-                <li><a href="../Appointment/index.php">ขอรับยา</a></li>
+                <li><a href="../Appointment/index.php">ขอรับบริการ</a></li>
                 <li><a href="../BMi/index.php">เทคแคร์</a></li>
-                <li><a href="#">คลินิครักษ์ยิ้ม</a></li>
+                <li><a href="../Health/index.html">คลินิครักษ์ยิ้ม</a></li>
                 <li><a href="../Volunteer/volunteer.php">ข่าวสารและกิจกรรม</a></li>
                 <li><a href="../Problem/add-new.php">รายงานปัญหา</a></li>
                 <li><a href="../Register/register.php">ข้อมูลนักเรียน</a></li>
-                <li><a href="../Login/home.php" class="btn-signin">HOME</a></li>
+                <li><a href="../login_page/home.php" class="btn-signin">HOME</a></li>
             </ul>
         </nav>
     </div>
   <div class="chatbox-wrapper">
     <div class="message-box">
       <div class="chat response">
-        <img src="bot.jpg" alt="Chatbot">
+        <img src="bot.png" alt="Chatbot">
         <span>สวัสดีครับ <br> 
           มีอะไรให้ผมช่วยแนะนำไหมครับ
         </span>

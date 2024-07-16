@@ -12,15 +12,20 @@ session_start();
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@100..900&display=swap" rel="stylesheet">
     <style>
         body {
-            background-color: #f8f9fa;
+            background-image: url('picture.jpg');
             font-family: "Noto Sans Thai", sans-serif;
-            --primary-color: #73f3ad;
-            --primary-color-dark: #5fe3c5;
-            background-image: linear-gradient(to right,
-                    var(--primary-color-dark),
-                    var(--primary-color));
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            backdrop-filter: blur(4px);
+            height: 100vh;
+            width: 100vw;
+            overflow: hidden;
         }
 
         .container {
@@ -100,7 +105,7 @@ session_start();
 
 <body>
     <div class="container">
-        <h2>Login</h2>
+        <h2>ลงชื่อเข้าใช้งาน</h2>
         <form method="POST" action="login_check.php">
             <div class="mb-3">
                 <label for="username" class="form-label">Username</label>
@@ -115,9 +120,9 @@ session_start();
                 echo '<div class="error">' . $_SESSION["error"] . '</div>';
             }
             ?>
-            <button type="submit" name="submit" class="btn btn-primary">Login</button>
+            <button type="submit" name="submit" class="btn btn-primary">ลงชื่อเข้าใช้งาน</button>
         </form>
-        <a href="register.php">Register</a>
+        <a href="register.php">สมัครสมชิก</a>
     </div>
 </body>
 

@@ -16,6 +16,7 @@ if (!isset($_SESSION['success'])) {
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@100..900&display=swap" rel="stylesheet">
 
+   
     <style>
         * {
             margin: 0;
@@ -25,11 +26,27 @@ if (!isset($_SESSION['success'])) {
         }
 
         body {
-            background-color: #E4FBFF;
-            justify-content: center;
-            align-items: center;
+            background-image: url('picture.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
             height: 100vh;
-            margin: 0;
+            width: 100vw;
+            overflow: hidden;
+            position: relative;
+        }
+
+        body::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            background: inherit;
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            z-index: -1;
         }
 
         .nav_bar {
@@ -39,7 +56,7 @@ if (!isset($_SESSION['success'])) {
             flex-direction: row;
             justify-content: space-around;
             align-items: center;
-            background-color: white;
+            background-color: rgba(255, 255, 255, 0.8);
         }
 
         .nav_bar h2 {
@@ -85,7 +102,7 @@ if (!isset($_SESSION['success'])) {
         }
 
         .container {
-            background-color: #FFFFFF;
+            background-color: rgba(255, 255, 255, 0.9);
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             padding: 20px;
@@ -99,7 +116,6 @@ if (!isset($_SESSION['success'])) {
             position: relative;
             left: 100px;
         }
-
 
         @media (max-width: 768px) {
             .nav_bar ul {
@@ -115,10 +131,12 @@ if (!isset($_SESSION['success'])) {
                 padding: 15px;
             }
         }
-        .yee{
+
+        .yee {
             position: relative;
             left: 170px;
         }
+
         @media (max-width: 480px) {
             .nav_bar {
                 flex-direction: column;
@@ -146,9 +164,9 @@ if (!isset($_SESSION['success'])) {
         <h2>SMART MEDICAL ROOM</h2>
 
         <ul>
-            <li><a href="../Appointment/index.php">ขอรับยา</a></li>
+            <li><a href="../Appointment/index.php">ขอรับบริการ</a></li>
             <li><a href="../BMi/index.php">เทคแคร์</a></li>
-            <li><a href="../Health/index.html">คลินิครักษ์ยิ้ม</a></li>
+            <li><a href="../Health/index.html">คลินิกรักษ์ยิ้ม</a></li>
             <li><a href="../Volunteer/volunteer.php">ข่าวสารและกิจกรรม</a></li>
             <li><a href="../Problem/add-new.php">รายงานปัญหา</a></li>
             <li><a href="../Register/register.php">ข้อมูลนักเรียน</a></li>

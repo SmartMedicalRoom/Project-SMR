@@ -17,18 +17,31 @@
             font-family: "Noto Sans Thai", sans-serif;
         }
 
+        body {
+            background-image: url('picture.jpg'); /* เปลี่ยน path เป็นที่อยู่ของไฟล์ภาพ */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            backdrop-filter: blur(4px);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
         .nav_bar {
             width: 100%;
             height: 80px;
             display: flex;
             flex-direction: row;
-            justify-content: space-around;
+            justify-content: space-between;
             align-items: center;
             background-color: white;
+            padding: 0 20px;
         }
 
         .nav_bar h2 {
-            position: relative;
+            color: #3498db;
         }
 
         .nav_bar ul {
@@ -49,7 +62,7 @@
         }
 
         ul li a:hover {
-            color:  gray;
+            color: gray;
         }
 
         .btn-signin {
@@ -57,25 +70,19 @@
             color: #fff;
             border-radius: 5px;
         }
-        .btn-signin:hover{
+
+        .btn-signin:hover {
             color: white;
         }
 
-        body {
-            background-color: #E4FBFF;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-        }
-
-        .hearder {
+        .header {
             background-color: #C9F7FF;
             border-radius: 10px;
             margin: 10px;
         }
 
         .container {
+            margin-top: 20px;
             background-color: #ffffff;
             padding: 20px;
             border-radius: 10px;
@@ -83,8 +90,21 @@
             width: 40%;
             align-items: center;
             position: relative;
-            right: -480px;
-            top: 30px;
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            z-index: 2;
+        }
+
+        .hamburger div {
+            width: 25px;
+            height: 3px;
+            background-color: #333;
+            margin: 4px;
+            transition: 0.4s;
         }
 
         .container h1 {
@@ -136,9 +156,35 @@
         .submit-btn:hover {
             background-color: #45a049;
         }
+
+        @media (max-width: 900px) {
+            .nav_bar ul {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 80px;
+                left: 0;
+                width: 100%;
+                background-color: white;
+                align-items: center;
+            }
+
+            .nav_bar ul.active {
+                display: flex;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            .container {
+                width: 90%;
+            }
+        }
+
         @media (max-width: 768px) {
             .nav_bar ul {
-                flex-direction: column;
+                font-size: small;
             }
 
             .nav_bar ul li a {
@@ -146,7 +192,7 @@
             }
 
             .container {
-                width: 100%;
+                width: 90%;
                 padding: 15px;
             }
         }
@@ -170,18 +216,20 @@
 
 <body>
     <nav class="nav_bar">
-
         <h2>SMART MEDICAL ROOM</h2>
-
-        <ul>
-            <li><a href="../Appointment/index.php">ขอรับยา</a></li>
+        <div class="hamburger" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <ul class="nav__links">
+            <li><a href="../Appointment/index.php">ขอรับบริการ</a></li>
             <li><a href="../BMi/index.php">เทคแคร์</a></li>
-            <li><a href="../Health/index.html">คลินิครักษ์ยิ้ม</a></li>
+            <li><a href="../Health/index.html">คลินิกรักษ์ยิ้ม</a></li>
             <li><a href="../Volunteer/volunteer.php">ข่าวสารและกิจกรรม</a></li>
             <li><a href="../Problem/add-new.php">รายงานปัญหา</a></li>
             <li><a href="../Register/register.php">ข้อมูลนักเรียน</a></li>
             <li><a href="../login_page/home.php" class="btn-signin">HOME</a></li>
-
         </ul>
     </nav>
     <div class="container">
@@ -281,6 +329,11 @@
             }
 
             return isValid;
+        }
+
+        function toggleMenu() {
+            const navLinks = document.querySelector('.nav__links');
+            navLinks.classList.toggle('active');
         }
     </script>
 </body>

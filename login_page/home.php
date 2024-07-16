@@ -27,7 +27,7 @@
     body {
       font-family: "Noto Sans Thai", sans-serif;
       background-image: linear-gradient(to right, var(--primary-color-dark), var(--primary-color));
-      display:flex;
+      display: flex;
       flex-wrap: wrap;
     }
 
@@ -63,11 +63,27 @@
       transition: 0.3s;
       border-bottom-right-radius: 5px;
       border-bottom-left-radius: 5px;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     }
 
     .link a:hover {
       background-color: #96fae3;
       color: rgb(101, 94, 94);
+    }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      z-index: 2;
+    }
+
+    .hamburger div {
+      width: 25px;
+      height: 3px;
+      background-color: var(--white);
+      margin: 4px;
+      transition: 0.4s;
     }
 
     .container {
@@ -81,15 +97,13 @@
     }
 
     .container__left {
-      background-image: url('images/picture.png');
-      background-position: center;
+      background-image: url('picture.jpg');
       background-repeat: no-repeat;
       background-size: cover;
       display: flex;
       align-items: center;
       justify-content: center;
       text-align: center;
-      background-color: var(--primary-color-dark); /* Maintain background color tone */
     }
 
     .container__right {
@@ -159,6 +173,28 @@
       color: rgb(164, 164, 164);
     }
 
+    @media (max-width: 900px) {
+      .nav__links {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-color: var(--primary-color-dark);
+        position: absolute;
+        top: 85px;
+        left: 0;
+        width: 100%;
+      }
+
+      .nav__links.active {
+        display: flex;
+      }
+
+      .hamburger {
+        display: flex;
+      }
+    }
+
     @media (max-width: 320px) {
 
       .nav__links {
@@ -171,7 +207,12 @@
       .container__left {
         flex: 1 1 320px;
       }
-      
+
+      .left__content h4 {
+        position: relative;
+        top: 10px;
+      }
+
       .button {
         width: 80px;
         height: 35px;
@@ -187,13 +228,20 @@
         gap: 20px;
       }
     }
-    .left__content{
-        position: relative;
-        top: 50px;
-      }
+
+    .left__content {
+      position: relative;
+      top: 50px;
+    }
+
     @media (min-width: 600px) {
       .nav__links {
         gap: 25px;
+      }
+
+      .left__content h4 {
+        position: relative;
+        top: 10px;
       }
     }
 
@@ -235,6 +283,11 @@
         font-size: 5rem;
       }
 
+      .left__content h4 {
+        position: relative;
+        top: -120px;
+      }
+
       .right__content h4 {
         font-size: 3rem;
       }
@@ -248,10 +301,12 @@
       nav {
         font-size: 20px;
       }
-      .nav__links{
+
+      .nav__links {
         padding: 0;
         margin: 0;
       }
+
       .right__content h1 {
         font-size: 5rem;
       }
@@ -272,12 +327,14 @@
       .button a {
         font-size: 1.5rem;
       }
-      .left__content{
+
+      .left__content {
         position: relative;
         top: -50px;
       }
-      .left__content h4{
-        font-size: 50px ;
+
+      .left__content h4 {
+        font-size: 50px;
       }
     }
   </style>
@@ -285,10 +342,15 @@
 
 <body>
   <nav>
+    <div class="hamburger" onclick="toggleMenu()">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
     <ul class="nav__links">
-      <li class="link"><a href="../Appointment/index.php">ขอรับยา</a></li>
+      <li class="link"><a href="../Appointment/index.php">ขอรับบริการ</a></li>
       <li class="link"><a href="../BMi/index.php">เทคแคร์</a></li>
-      <li class="link"><a href="../Health/index.html">คลินิครักษ์ยิ้ม</a></li>
+      <li class="link"><a href="../Health/index.html">คลินิกรักษ์ยิ้ม</a></li>
       <li class="link"><a href="../Volunteer/volunteer.php">ข่าวสารและกิจกรรม</a></li>
       <li class="link"><a href="../Problem/add-new.php">รายงานปัญหา</a></li>
       <li class="link"><a href="../Register/register.php">ข้อมูลนักเรียน</a></li>
@@ -305,14 +367,21 @@
     <div class="container__right">
       <div class="right__content">
         <h1>SMR</h1>
-        <h4>Smart medical Room</h4>
+        <h4>Smart Medical Room</h4>
         <p>
-        ระบบการจัดการข้อมูลในห้องพยาบาลที่ใช้เทคโนโลยีอัจฉริยะเพื่อเพิ่มประสิทธิภาพในการบริการด้านสุขภาพและการจัดการข้อมูลทางการแพทย์ ระบบนี้ช่วยให้นักเรียนและบุคลากรสามารถเข้าถึงข้อมูลสุขภาพได้ง่ายขึ้น 
+          ระบบห้องพยาบาลอัจฉริยะที่ใช้เทคโนโลยีอัจฉริยะเพื่อเพิ่มประสิทธิภาพในการบริการด้านสุขภาพและการจัดการข้อมูลทางการแพทย์ ระบบนี้ช่วยให้นักเรียนและบุคลากรสามารถเข้าถึงข้อมูลสุขภาพได้ง่ายขึ้น
         </p>
         <button class="button"><a class="link_ol" href="logout.php">Logout</a></button>
       </div>
     </div>
   </div>
+
+  <script>
+    function toggleMenu() {
+      const navLinks = document.querySelector('.nav__links');
+      navLinks.classList.toggle('active');
+    }
+  </script>
 </body>
 
 </html>
