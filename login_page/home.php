@@ -27,63 +27,44 @@
     body {
       font-family: "Noto Sans Thai", sans-serif;
       background-image: linear-gradient(to right, var(--primary-color-dark), var(--primary-color));
-      display: flex;
-      flex-wrap: wrap;
     }
 
     nav {
-      position: absolute;
-      width: 100%;
-      max-width: 1200px;
-      min-height: 85px;
-      left: 50%;
-      transform: translateX(-50%);
-      padding: 2rem 1rem;
+      padding: 10px 30px;
       display: flex;
       align-items: center;
-      justify-content: flex-end;
-      z-index: 1;
-      font-size: 18px;
+      justify-content: space-between;
+      background: #004274;
+      position: relative;
+      height: 70px;
     }
 
-    .nav__links {
-      list-style: none;
+    .logo {
+      color: #fff;
+    }
+
+    nav ul {
       display: flex;
+      gap: 30px;
       align-items: center;
-      justify-content: center;
-      gap: 13px;
-      flex-wrap: wrap;
     }
 
-    .link a {
-      padding: 1rem;
-      padding-top: 2rem;
-      color: var(--white);
+    nav ul li {
+      list-style-type: none;
+    }
+
+    nav ul li a {
       text-decoration: none;
-      transition: 0.3s;
-      border-bottom-right-radius: 5px;
-      border-bottom-left-radius: 5px;
-      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+      color: #fff;
     }
 
-    .link a:hover {
-      background-color: #96fae3;
-      color: rgb(101, 94, 94);
-    }
-
-    .hamburger {
+    .menu-icon {
       display: none;
-      flex-direction: column;
-      cursor: pointer;
-      z-index: 2;
     }
 
-    .hamburger div {
-      width: 25px;
-      height: 3px;
-      background-color: var(--white);
-      margin: 4px;
-      transition: 0.4s;
+    .menu-icon i {
+      color: #fff;
+      font-size: 30px;
     }
 
     .container {
@@ -92,12 +73,14 @@
       flex-wrap: wrap;
     }
 
-    .container__left, .container__right {
+    .container__left,
+    .container__right {
       flex: 1 1 100%;
     }
 
     .container__left {
       background-image: url('picture.jpg');
+      background-position: 50% 50%;
       background-repeat: no-repeat;
       background-size: cover;
       display: flex;
@@ -173,168 +156,30 @@
       color: rgb(164, 164, 164);
     }
 
-    @media (max-width: 900px) {
-      .nav__links {
-        display: none;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        background-color: var(--primary-color-dark);
+    @media only screen and (max-width: 768px) {
+      nav ul {
         position: absolute;
-        top: 85px;
+        top: 70px;
         left: 0;
-        width: 100%;
-      }
-
-      .nav__links.active {
-        display: flex;
-      }
-
-      .hamburger {
-        display: flex;
-      }
-    }
-
-    @media (max-width: 320px) {
-
-      .nav__links {
-        display: flex;
+        right: 0;
         flex-direction: column;
-        align-items: center;
-        justify-content: center;
+        text-align: center;
+        background: #004274;
+        gap: 0;
+        overflow: hidden;
       }
 
-      .container__left {
-        flex: 1 1 320px;
+      nav ul li {
+        padding: 20px;
+        padding-top: 0;
       }
 
-      .left__content h4 {
-        position: relative;
-        top: 10px;
+      .menu-icon {
+        display: block;
       }
 
-      .button {
-        width: 80px;
-        height: 35px;
-      }
-
-      .button a {
-        font-size: 0.875rem;
-      }
-    }
-
-    @media (min-width: 480px) {
-      .nav__links {
-        gap: 20px;
-      }
-    }
-
-    .left__content {
-      position: relative;
-      top: 50px;
-    }
-
-    @media (min-width: 600px) {
-      .nav__links {
-        gap: 25px;
-      }
-
-      .left__content h4 {
-        position: relative;
-        top: 10px;
-      }
-    }
-
-    @media (min-width: 768px) {
-      .container__left, .container__right {
-        flex: 1;
-      }
-    }
-
-    @media (min-width: 900px) {
-      .right__content h1 {
-        font-size: 4rem;
-      }
-
-      .right__content h4 {
-        font-size: 2.5rem;
-      }
-
-      .right__content p {
-        font-size: 1.25rem;
-      }
-
-      .button {
-        width: 120px;
-        height: 50px;
-      }
-
-      .button a {
-        font-size: 1.25rem;
-      }
-    }
-
-    @media (min-width: 1024px) {
-      nav {
-        font-size: 20px;
-      }
-
-      .right__content h1 {
-        font-size: 5rem;
-      }
-
-      .left__content h4 {
-        position: relative;
-        top: -120px;
-      }
-
-      .right__content h4 {
-        font-size: 3rem;
-      }
-
-      .right__content p {
-        font-size: 1.5rem;
-      }
-    }
-
-    @media (min-width: 1200px) {
-      nav {
-        font-size: 20px;
-      }
-
-      .nav__links {
-        padding: 0;
-        margin: 0;
-      }
-
-      .right__content h1 {
-        font-size: 5rem;
-      }
-
-      .right__content h4 {
-        font-size: 3rem;
-      }
-
-      .right__content p {
-        font-size: 1.3rem;
-      }
-
-      .button {
-        width: 140px;
-        height: 60px;
-      }
-
-      .button a {
-        font-size: 1.5rem;
-      }
-
-      .left__content {
-        position: relative;
-        top: -50px;
-      }
-
-      .left__content h4 {
-        font-size: 50px;
+      #menuList {
+        transition: all 0.5s;
       }
     }
   </style>
@@ -342,20 +187,20 @@
 
 <body>
   <nav>
-    <div class="hamburger" onclick="toggleMenu()">
-      <div></div>
-      <div></div>
-      <div></div>
+    <div class="logo">
+      <h1>Logo</h1>
     </div>
-    <ul class="nav__links">
+    <ul id="menuList">
       <li class="link"><a href="../Appointment/index.php">ขอรับบริการ</a></li>
       <li class="link"><a href="../BMi/index.php">เทคแคร์</a></li>
       <li class="link"><a href="../Health/index.html">คลินิกรักษ์ยิ้ม</a></li>
       <li class="link"><a href="../Volunteer/volunteer.php">ข่าวสารและกิจกรรม</a></li>
       <li class="link"><a href="../Problem/add-new.php">รายงานปัญหา</a></li>
       <li class="link"><a href="../Register/register.php">ข้อมูลนักเรียน</a></li>
-      <li class="link"><a href="../login_page/home.php" class="btn-signin">HOME</a></li>
     </ul>
+    <div class="menu-icon">
+      <i class="fa-solid fa-bars" onclick="toggleMenu()"></i>
+    </div>
   </nav>
 
   <div class="container">
@@ -377,11 +222,18 @@
   </div>
 
   <script>
+    let menuList = document.getElementById("menuList")
+    menuList.style.maxHeight = "0px";
+
     function toggleMenu() {
-      const navLinks = document.querySelector('.nav__links');
-      navLinks.classList.toggle('active');
+      if (menuList.style.maxHeight == "0px") {
+        menuList.style.maxHeight = "300px";
+      } else {
+        menuList.style.maxHeight = "0px";
+      }
     }
   </script>
+  <script src="https://kit.fontawesome.com/f8e1a90484.js" crossorigin="anonymous"></script>
 </body>
 
 </html>

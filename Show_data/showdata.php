@@ -19,7 +19,8 @@
         }
 
         body {
-            background-image: url('picture.jpg'); /* เปลี่ยน path เป็นที่อยู่ของไฟล์ภาพ */
+            background-image: url('picture.jpg');
+            /* เปลี่ยน path เป็นที่อยู่ของไฟล์ภาพ */
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -29,68 +30,42 @@
             overflow: hidden;
         }
 
-        .nav_bar {
-            width: 100%;
-            height: 80px;
+        nav {
+            padding: 10px 30px;
             display: flex;
-            justify-content: space-between;
             align-items: center;
-            background-color: white;
-            padding: 0 50px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-
-        .nav_bar h2 {
-            color: #3498db;
-            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
-        }
-
-        .nav_bar ul {
-            display: flex;
-            list-style: none;
-        }
-
-        .nav_bar ul li {
-            margin-left: 20px;
-        }
-
-        .nav_bar ul li a {
-            text-decoration: none;
-            color: #333;
-            padding: 10px 20px;
-            text-transform: uppercase;
-            transition: color 0.3s ease;
-            letter-spacing: 1px;
-        }
-
-        .nav_bar ul li a:hover {
-            color: gray;
-        }
-
-        .btn-signin {
-            background: linear-gradient(45deg, #3498db, #8e44ad);
-            color: white;
-            border-radius: 5px;
-            padding: 10px 20px;
-            transition: background 0.3s ease;
-        }
-
-        .btn-signin:hover {
-            background: linear-gradient(45deg, #8e44ad, #3498db);
-        }
-
-        .navbar {
-            background-color: rgba(202, 247, 251, 0.3);
-            color: white;
-            padding: 20px;
-            text-align: center;
-        }
-
-        .navbar h1 {
+            justify-content: space-between;
+            background: #004274;
             position: relative;
-            left: 50px;
-            font-size: 25px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            height: 70px;
+        }
+
+        .logo {
+            color: #fff;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+        }
+
+        nav ul li {
+            list-style-type: none;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #fff;
+        }
+
+        .menu-icon {
+            display: none;
+        }
+
+        .menu-icon i {
+            color: #fff;
+            font-size: 30px;
         }
 
         .container {
@@ -125,11 +100,14 @@
             margin-top: 20px;
         }
 
-        table, th, td {
+        table,
+        th,
+        td {
             border: 1px solid #ddd;
         }
 
-        th, td {
+        th,
+        td {
             padding: 10px;
             text-align: left;
         }
@@ -167,19 +145,50 @@
         button[type="submit"]:hover {
             background-color: #2980b9;
         }
+
+        @media only screen and (max-width: 768px) {
+            nav ul {
+                position: absolute;
+                top: 70px;
+                left: 0;
+                right: 0;
+                flex-direction: column;
+                text-align: center;
+                background: #004274;
+                gap: 0;
+                overflow: hidden;
+            }
+
+            nav ul li {
+                padding: 20px;
+                padding-top: 0;
+            }
+
+            .menu-icon {
+                display: block;
+            }
+
+            #menuList {
+                transition: all 0.5s;
+            }
+        }
     </style>
 </head>
 
 <body>
-    <nav class="nav_bar">
-        <h2>SMART MEDICAL ROOM</h2>
-        <ul>
+    <nav>
+        <div class="logo">
+            <h1>Logo</h1>
+        </div>
+        <ul id="menuList">
             <li class="link"><a href="../Show_data/showdata.php">ข้อมูลบุคลากร</a></li>
             <li class="link"><a href="../stock/index.php">ข้อมูลคลังยา</a></li>
             <li class="link"><a href="../Problem/index.php">แจ้งปัญหา</a></li>
             <li class="link"><a href="../Health/addnew.php">เคสล่าสุด</a></li>
-            <li><a href="../login_page/admin.php" class="btn-signin">HOME</a></li>
         </ul>
+        <div class="menu-icon">
+            <i class="fa-solid fa-bars" onclick="toggleMenu()"></i>
+        </div>
     </nav>
     <section class="navbar">
         <h1>ข้อมูลบุคลากรและนักเรียน</h1>
@@ -236,5 +245,19 @@
         </table>
     </div>
 </body>
+
+<script>
+    let menuList = document.getElementById("menuList")
+    menuList.style.maxHeight = "0px";
+
+    function toggleMenu() {
+        if (menuList.style.maxHeight == "0px") {
+            menuList.style.maxHeight = "300px";
+        } else {
+            menuList.style.maxHeight = "0px";
+        }
+    }
+</script>
+<script src="https://kit.fontawesome.com/f8e1a90484.js" crossorigin="anonymous"></script>
 
 </html>

@@ -1,4 +1,4 @@
- <?php
+<?php
 $servername = "localhost";
 $username = "root";
 $password = "";
@@ -30,12 +30,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $category = "น้ำหนักปกติ";
         } elseif ($bmi >= 25 && $bmi < 29.9) {
             $category = "น้ำหนักเกิน";
-        }elseif ($bmi >= 30 && $bmi < 34.9) {
+        } elseif ($bmi >= 30 && $bmi < 34.9) {
             $category = "อ้วน (ระดับ 1)t";
-        }elseif ($bmi >= 35 && $bmi < 39.9) {
+        } elseif ($bmi >= 35 && $bmi < 39.9) {
             $category = " อ้วน (ระดับ 2)";
-        }
-         else {
+        } else {
             $category = "อ้วนมาก (ระดับ 3)";
         }
 
@@ -57,255 +56,220 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 $conn->close();
 ?>
-
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <title>BMI Calculator</title>
-    <link rel="stylesheet" href="styles.css">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Boxicons CSS -->
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+    <title>Side Navigation Bar in HTML CSS JavaScript</title>
+    <link rel="stylesheet" href="bmi.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@100..900&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@100..900&display=swap" rel="stylesheet">
 
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: "Noto Sans Thai", sans-serif;
-        }
-
-        body {
-            background-image: url('picture.jpg'); /* เปลี่ยน path เป็นที่อยู่ของไฟล์ภาพ */
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            backdrop-filter: blur(4px);
-            height: 100vh;
-            width: 100vw;
-            overflow: hidden;
-        }
-
-        .response {
-            background-color: #494b59;
-        }
-
-        .nav_bar {
-            width: 100%;
-            height: 80px;
-            display: flex;
-            flex-direction: row;
-            justify-content: space-around;
-            align-items: center;
-            background-color: white;
-        }
-
-        .nav_bar h2 {
-            color: #3498db;
-        }
-
-        .nav_bar ul {
-            display: flex;
-        }
-
-        .nav_bar ul li {
-            list-style: none;
-        }
-
-        .nav_bar ul li a {
-            text-decoration: none;
-            color: #333;
-            padding: 15px 30px;
-            text-transform: uppercase;
-            transition: .3s ease;
-            letter-spacing: 2px;
-        }
-
-        ul li a:hover {
-            color: gray;
-        }
-
-        .btn-signin {
-            background: linear-gradient(45deg, #3498db, #8e44ad);
-            color: #fff;
-            border-radius: 5px;
-        }
-
-        .btn-signin:hover {
-            color: white;
-        }
-
-        .header {
-            background-color: #4CAF50;
-            color: white;
-            padding: 15px;
-            text-align: center;
-        }
-
-
-        .container {
-            max-width: 500px;
-            margin: 50px auto;
-            padding: 20px;
-            background-color: #fff;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-
-        h1 {
-            text-align: center;
-            color: #333;
-        }
-
-        form {
-            display: flex;
-            flex-direction: column;
-        }
-
-        label {
-            margin-top: 10px;
-            color: #555;
-        }
-
-        input[type="text"],
-        input[type="number"] {
-            padding: 10px;
-            margin-top: 5px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-        }
-
-        input[type="submit"] {
-            margin-top: 20px;
-            padding: 10px;
-            border: none;
-            border-radius: 4px;
-            background-color: #4CAF50;
-            color: #fff;
-            cursor: pointer;
-        }
-
-        input[type="submit"]:hover {
-            background-color: #45a049;
-        }
-
-        .success {
-            margin-top: 20px;
-            color: green;
-        }
-
-        .error {
-            margin-top: 20px;
-            color: red;
-        }
-
-        .heard {
-            display: flex;
-
-        }
-
-        .button {
-            position: relative;
-            left: 170px;
-            width: 100px;
-            border: none;
-            border-radius: 5px;
-            background: linear-gradient(45deg, #3498db, #8e44ad);
-        }
-
-        .link {
-            text-decoration: none;
-            font-size: larger;
-            font-weight: 600;
-            color: #fff;
-        }
-
-        .BMI {
-            font-weight: 500;
-        }
-
-        @media (max-width: 768px) {
-            .nav_bar ul {
-                flex-direction: column;
-            }
-
-            .nav_bar ul li a {
-                padding: 10px;
-            }
-
-            .container {
-                width: 100%;
-                padding: 15px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .nav_bar {
-                flex-direction: column;
-                height: auto;
-            }
-
-            .nav_bar h2 {
-                margin-bottom: 10px;
-            }
-
-            .nav_bar ul {
-                align-items: center;
-            }
-
-            button {
-                width: 100%;
-            }
-        }
-    </style>
 </head>
 
 <body>
-    <div class="navbar">
-        <nav class="nav_bar">
-
-            <h2>SMART MEDICAL ROOM</h2>
-
-            <ul>
-                <li><a href="../Appointment/index.php">ขอรับบริการ</a></li>
-                <li><a href="../BMi/index.php">เทคแคร์</a></li>
-                <li><a href="../Health/index.html">คลินิครักษ์ยิ้ม</a></li>
-                <li><a href="../Volunteer/volunteer.php">ข่าวสารและกิจกรรม</a></li>
-                <li><a href="../Problem/add-new.php">รายงานปัญหา</a></li>
-                <li><a href="../Register/register.php">ข้อมูลนักเรียน</a></li>
-                <li><a href="../login_page/home.php" class="btn-signin">HOME</a></li>
-            </ul>
-        </nav>
-    </div>
-    <div class="container">
-        <div class="heard">
-            <h1 class="BMI">ค่าดัชนีมวลกาย</h1>
-            <button class="button"><a class="link" href="gpt.php">เทคแคร์</a></button>
+    <nav class="navbar">
+        <div class="logo_item">
+            <i class="bx bx-menu" id="sidebarOpen"></i>
+            <img src="images/logo.png" alt=""></i>SMART MEDICAL ROOM
         </div>
+        <div class="navbar_content">
+            <i class="bi bi-grid"></i>
+            <i class='bx bx-sun' id="darkLight"></i>
+        </div>
+    </nav>
+
+    <nav class="sidebar">
+        <div class="menu_content">
+            <ul class="menu_items">
+                <div class="menu_title menu_dahsboard"></div>
+                <li class="item">
+                    <div href="#" class="nav_link submenu_item">
+                        <span class="navlink_icon">
+                            <box-icon name='home-circle' type='solid'></box-icon>
+                        </span>
+                        <span class="navlink">Home</span>
+                        <i class="bx bx-chevron-right arrow-left"></i>
+                    </div>
+                    <ul class="menu_items submenu">
+                        <a href="../login_page/home.php" class="nav_link sublink">HOME PAGE</a>
+                    </ul>
+                </li>
+                <li class="item">
+                    <div href="#" class="nav_link submenu_item">
+                        <span class="navlink_icon">
+                            <box-icon type='solid' name='log-in-circle'></box-icon>
+                        </span>
+                        <span class="navlink">ออกจากระบบ</span>
+                        <i class="bx bx-chevron-right arrow-left"></i>
+                    </div>
+
+                    <ul class="menu_items submenu">
+                        <a href="../login_page/logout.php" class="nav_link sublink">ออกจากระบบ</a>
+                    </ul>
+                </li>
+                <!-- end -->
+            </ul>
+
+            <ul class="menu_items">
+                <div class="menu_title menu_editor"></div>
+
+                <li class="item">
+                    <a href="../Appointment/index.php" class="nav_link">
+                        <span class="navlink_icon">
+                            <box-icon name='capsule' type='solid'></box-icon>
+                        </span>
+                        <span class="navlink">ขอรับบริการ</span>
+                    </a>
+                </li>
+                <!-- End -->
+
+                <li class="item">
+                    <a href="../BMi/index.php" class="nav_link">
+                        <span class="navlink_icon">
+                            <box-icon name='chat' type='solid'></box-icon>
+                        </span>
+                        <span class="navlink">เทคแคร์</span>
+                    </a>
+                </li>
+                <li class="item">
+                    <a href="../Health/index.html" class="nav_link">
+                        <span class="navlink_icon">
+                            <box-icon name='plus-medical'></box-icon>
+                        </span>
+                        <span class="navlink">คลินิกรักษ์ยิ้ม</span>
+                    </a>
+                </li>
+                <li class="item">
+                    <a href="../Volunteer/volunteer.php" class="nav_link">
+                        <span class="navlink_icon">
+                            <box-icon name='news' type='solid'></box-icon>
+                        </span>
+                        <span class="navlink">ข่าวสารและกิจกรรม</span>
+                    </a>
+                </li>
+                <li class="item">
+                    <a href="../Problem/add-new.php" class="nav_link">
+                        <span class="navlink_icon">
+                            <box-icon name='megaphone' type='solid'></box-icon>
+                        </span>
+                        <span class="navlink">รายงานปัญหา</span>
+                    </a>
+                </li>
+                <li class="item">
+                    <a href="../Register/register.php" class="nav_link">
+                        <span class="navlink_icon">
+                            <box-icon name='user-account' type='solid'></box-icon>
+                        </span>
+                        <span class="navlink">สมัครสมาชิก</span>
+                    </a>
+                </li>
+            </ul>
+
+            <!-- Sidebar Open / Close -->
+            <div class="bottom_content">
+                <div class="bottom expand_sidebar">
+                    <span> Expand</span>
+                    <i class='bx bx-log-in'></i>
+                </div>
+                <div class="bottom collapse_sidebar">
+                    <span> Collapse</span>
+                    <i class='bx bx-log-out'></i>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+
+    <div class="form-container">
         <form method="post" action="index.php">
-            <label for="name">ชื่อ-นามสกุล:</label>
-            <input type="text" id="name" name="name" required>
+            <h2>ค่าดัชนีมวลกาย</h2>
 
-            <label for="height">ส่วนสูง (ซม.):</label>
-            <input type="number" id="height" name="height" required>
+            <button class="takecare"><a class="link" href="gpt.php">เทคแคร์</a></button>
 
-            <label for="weight">น้ำหนัก (กก.):</label>
-            <input type="number" id="weight" name="weight" required>
-
-            <input type="submit" value="คำนวณค่าดัชนีมวลกาย">
+            <div class="input-group">
+                <input type="text" placeholder="ชื่อ-นามสกุล" id="name" name="name" required>
+            </div>
+            <div class="input-group">
+                <input type="number" placeholder="ส่วนสูง (ซม.)" id="height" name="height" required>
+            </div>
+            <div class="input-group">
+                <input type="number" placeholder="ส่วนสูง (กก.)" id="weight" name="weight" required>
+            </div>
+            <button type="submit">คำนวณค่าดัชนีมวลกาย</button>
+            <div class="echo">
             <?php if (!empty($success_message)) {
                 echo "<p class='success'>$success_message</p>";
             } ?>
             <?php if (!empty($error_message)) {
                 echo "<p class='error'>$error_message</p>";
             } ?>
+            </div>
         </form>
     </div>
+
+
 </body>
+<script>
+    const body = document.querySelector("body");
+    const darkLight = document.querySelector("#darkLight");
+    const sidebar = document.querySelector(".sidebar");
+    const submenuItems = document.querySelectorAll(".submenu_item");
+    const sidebarOpen = document.querySelector("#sidebarOpen");
+    const sidebarClose = document.querySelector(".collapse_sidebar");
+    const sidebarExpand = document.querySelector(".expand_sidebar");
+    sidebarOpen.addEventListener("click", () => sidebar.classList.toggle("close"));
+
+    sidebarClose.addEventListener("click", () => {
+        sidebar.classList.add("close", "hoverable");
+    });
+    sidebarExpand.addEventListener("click", () => {
+        sidebar.classList.remove("close", "hoverable");
+    });
+
+    sidebar.addEventListener("mouseenter", () => {
+        if (sidebar.classList.contains("hoverable")) {
+            sidebar.classList.remove("close");
+        }
+    });
+    sidebar.addEventListener("mouseleave", () => {
+        if (sidebar.classList.contains("hoverable")) {
+            sidebar.classList.add("close");
+        }
+    });
+
+    darkLight.addEventListener("click", () => {
+        body.classList.toggle("dark");
+        if (body.classList.contains("dark")) {
+            document.setI
+            darkLight.classList.replace("bx-sun", "bx-moon");
+        } else {
+            darkLight.classList.replace("bx-moon", "bx-sun");
+        }
+    });
+
+    submenuItems.forEach((item, index) => {
+        item.addEventListener("click", () => {
+            item.classList.toggle("show_submenu");
+            submenuItems.forEach((item2, index2) => {
+                if (index !== index2) {
+                    item2.classList.remove("show_submenu");
+                }
+            });
+        });
+    });
+
+    if (window.innerWidth < 768) {
+        sidebar.classList.add("close");
+    } else {
+        sidebar.classList.remove("close");
+    }
+</script>
+<script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
 
 </html>

@@ -38,6 +38,5 @@ if($result) {
     $_SESSION['error'] = "ส่งข้อมูลผิดพลาด";
     header("Location: page.php");
 }
-  
     }
  ?>  

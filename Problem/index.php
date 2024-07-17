@@ -3,6 +3,7 @@ include "db_conn.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -28,77 +29,64 @@ include "db_conn.php";
     }
 
     body {
-            background-image: url('picture.jpg'); /* เปลี่ยน path เป็นที่อยู่ของไฟล์ภาพ */
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            backdrop-filter: blur(4px);
-            height: 100vh;
-            width: 100vw;
-            overflow: hidden;
-        }
-    
-        .nav_bar {
-      width: 100%;
-      height: 80px;
+      background-image: url('picture.jpg');
+      /* เปลี่ยน path เป็นที่อยู่ของไฟล์ภาพ */
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      backdrop-filter: blur(4px);
+      height: 100vh;
+      width: 100vw;
+      overflow: hidden;
+    }
+
+    nav {
+      padding: 10px 30px;
       display: flex;
-      justify-content: space-between;
       align-items: center;
-      background-color: white;
-      padding: 0 50px;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      justify-content: space-between;
+      background: #004274;
+      position: relative;
+      height: 70px;
     }
 
-    .nav_bar h2 {
-      font-size: 25px;
-      font-weight: 800;
-      color: #3498db;
-      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+    .logo {
+      color: #fff;
     }
 
-    .nav_bar ul {
+    nav ul {
       display: flex;
-      list-style: none;
+      gap: 30px;
+      align-items: center;
     }
 
-    .nav_bar ul li {
-      margin-left: 20px;
+    nav ul li {
+      list-style-type: none;
     }
 
-    .nav_bar ul li a {
+    nav ul li a {
       text-decoration: none;
-      color: #333;
-      padding: 10px 20px;
-      text-transform: uppercase;
-      transition: color 0.3s ease;
-      letter-spacing: 1px;
+      color: #fff;
     }
 
-    .nav_bar ul li a:hover {
-      color: gray;
+    .menu-icon {
+      display: none;
     }
 
-    .btn-signin {
-      background: linear-gradient(45deg, #3498db, #8e44ad);
-      color: white;
-      border-radius: 5px;
-      padding: 10px 20px;
-      transition: background 0.3s ease;
+    .menu-icon i {
+      color: #fff;
+      font-size: 30px;
     }
 
-    .btn-signin:hover {
-      background: linear-gradient(45deg, #8e44ad, #3498db);
-    }
     .head {
       background-color: rgba(202, 247, 251, 0.3);
       padding: 10px;
-    
+
     }
+
     .head h1 {
       font-size: 28px;
       color: white;
-      position: relative;
-      left: 700px;
       top: 8px;
       text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     }
@@ -124,21 +112,50 @@ include "db_conn.php";
     .tr {
       background-color: #3498db;
     }
+
+    @media only screen and (max-width: 768px) {
+      nav ul {
+        position: absolute;
+        top: 70px;
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        text-align: center;
+        background: #004274;
+        gap: 0;
+        overflow: hidden;
+      }
+
+      nav ul li {
+        padding: 20px;
+        padding-top: 0;
+      }
+
+      .menu-icon {
+        display: block;
+      }
+
+      #menuList {
+        transition: all 0.5s;
+      }
+    }
   </style>
 </head>
 
 <body>
-  <nav class="nav_bar">
-
-    <h2>SMART MEDICAL ROOM</h2>
-
-    <ul>
-        <li class="link"><a href="../Show_data/showdata.php">ข้อมูลบุคลากร</a></li>
-        <li class="link"><a href="../stock/index.php">ข้อมูลคลังยา</a></li>
-        <li class="link"><a href="#">แจ้งปัญหา</a></li>
-        <li class="link"><a href="../Health/addnew.php">เคสล่าสุด</a></li>
-        <li><a href="../login_page/admin.php" class="btn-signin">HOME</a></li>
+  <nav>
+    <div class="logo">
+      <h1>Logo</h1>
+    </div>
+    <ul id="menuList">
+      <li class="link"><a href="../Show_data/showdata.php">ข้อมูลบุคลากร</a></li>
+      <li class="link"><a href="../stock/index.php">ข้อมูลคลังยา</a></li>
+      <li class="link"><a href="../Problem/index.php">แจ้งปัญหา</a></li>
+      <li class="link"><a href="../Health/addnew.php">เคสล่าสุด</a></li>
     </ul>
+    <div class="menu-icon">
+      <i class="fa-solid fa-bars" onclick="toggleMenu()"></i>
+    </div>
   </nav>
   <section class="head">
     <h1>รายงานปัญหา</h1>
@@ -182,7 +199,19 @@ include "db_conn.php";
 
   <!-- Bootstrap -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+  <script>
+    let menuList = document.getElementById("menuList")
+    menuList.style.maxHeight = "0px";
 
+    function toggleMenu() {
+      if (menuList.style.maxHeight == "0px") {
+        menuList.style.maxHeight = "300px";
+      } else {
+        menuList.style.maxHeight = "0px";
+      }
+    }
+  </script>
+  <script src="https://kit.fontawesome.com/f8e1a90484.js" crossorigin="anonymous"></script>
 </body>
 
 </html>

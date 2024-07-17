@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="volunteer.css">
 
     <script>
         function navigateToSection() {
@@ -21,274 +22,29 @@
             }
         }
     </script>
-    <style>
-      * {
-            padding: 0;
-            margin: 0;
-            box-sizing: border-box;
-            font-family: "Noto Sans Thai", sans-serif;
-        }
-        .nav_bar {
-            display: flex;
-            flex-direction: row;
-            justify-content: space-around;
-            align-items: center;
-            background-color: white;
-           height: 80px;
-        }
-        .nav_bar ul {
-            display: flex;
-        }
-        .nav_bar h2 {
-            position: relative;
-            top: 10px;
-            color: #3498db;
-        }
-        .nav_bar ul li {
-            list-style: none;
-        }
-        .nav_bar ul li a {
-            text-decoration: none;
-            color: #333;
-            padding: 15px 30px;
-            text-transform: uppercase;
-            transition: .3s ease;
-            letter-spacing: 2px;
-        }
-        ul li a:hover {
-            color: gray;
-        }
-
-        .btn-signin {
-            background: linear-gradient(45deg, #3498db, #8e44ad);
-            color: #fff;
-            border-radius: 5px;
-        }
-        .bull {
-            padding: 10px;
-            background-color: rgb(247, 252, 255);
-        }
-        .bull h1 {
-            font-weight: 500px;
-            font-size: 30px;
-        } 
-       
-
-        body {
-            background-image: url('picture.jpg'); /* เปลี่ยน path เป็นที่อยู่ของไฟล์ภาพ */
-            background-size: cover;
-            background-repeat: no-repeat;
-            backdrop-filter: blur(6px);
-        }
-
-        .container {
-            max-width: 600px;
-            margin: 50px auto;
-            padding: 20px;
-            background-color: #fff;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-
-        h1 {
-            text-align: center;
-            color: #333;
-        }
-
-        form {
-            display: flex;
-            flex-direction: column;
-        }
-
-        label {
-            margin-top: 10px;
-            color: #555;
-        }
-
-        input[type="text"],
-        input[type="number"] {
-            padding: 10px;
-            margin-top: 5px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-        }
-
-        input[type="submit"] {
-            margin-top: 20px;
-            padding: 10px;
-            border: none;
-            border-radius: 4px;
-            background-color: #4CAF50;
-            color: #fff;
-            cursor: pointer;
-        }
-
-        input[type="submit"]:hover {
-            background-color: #45a049;
-        }
-
-        .success {
-            margin-top: 20px;
-            color: green;
-        }
-
-        .error {
-            margin-top: 20px;
-            color: red;
-        }
-
-        @media (max-width: 768px) {
-            .container {
-                width: 90%;
-                margin: 20px auto;
-                padding: 15px;
-            }
-
-            h1 {
-                font-size: 24px;
-            }
-
-            input[type="text"],
-            input[type="number"] {
-                font-size: 14px;
-            }
-
-            input[type="submit"] {
-                font-size: 16px;
-                padding: 10px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .container {
-                width: 100%;
-                margin: 10px auto;
-                padding: 10px;
-            }
-
-            h1 {
-                font-size: 20px;
-            }
-
-            input[type="text"],
-            input[type="number"] {
-                font-size: 12px;
-            }
-
-            input[type="submit"] {
-                font-size: 14px;
-                padding: 8px;
-            }
-        }
-
-        nav {
-            background-color: rgb(247, 252, 255);
-            padding: 10px;
-            text-align: center;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-
-        nav select {
-            padding: 10px;
-            font-size: 16px;
-            border: 1px solid rgb(164, 164, 164);
-            border-radius: 5px;
-            outline: none;
-            color: #333;
-        }
-
-        main {
-            padding: 20px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        section {
-            margin-bottom: 40px;
-        }
-
-        section h2 {
-            padding-bottom: 5px;
-            margin-bottom: 20px;
-            color: #ddd;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-        }
-
-        .event {
-            background-color: white;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            padding: 20px;
-            margin-bottom: 20px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            transition: transform 0.2s;
-        }
-
-        .event:hover {
-            transform: translateY(-5px);
-        }
-
-        .event img {
-            width:300px;
-           
-            height: auto;
-            border-radius: 8px;
-            margin-bottom: 15px;
-        }
-
-        footer {
-            background-color: #333;
-            color: white;
-            text-align: center;
-            padding: 10px 0;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-            box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
-        }
-    </style>
+   
 </head>
 
 <body>
-    <div class="nav_bar">
-        
-
-            <h2>SMART MEDICAL ROOM</h2>
-
-            <ul>
-                <li><a href="../Appointment/index.php">ขอรับบริการ</a></li>
-                <li><a href="../BMi/index.php">เทคแคร์</a></li>
-                <li><a href="../Health/index.html">คลินิกรักษ์ยิ้ม</a></li>
-                <li><a href="../Volunteer/volunteer.php">ข่าวสารและกิจกรรม</a></li>
-                <li><a href="../Problem/add-new.php">รายงานปัญหา</a></li>
-                <li><a href="../Register/register.php">ข้อมูลนักเรียน</a></li>
-                <li><a href="../login_page/home.php" class="btn-signin">HOME</a></li>
-            </ul>
-     
+<nav>
+    <div class="logo">
+      <h1>Logo</h1>
     </div>
+    <ul id="menuList">
+      <li class="link"><a href="../Appointment/index.php">ขอรับบริการ</a></li>
+      <li class="link"><a href="../BMi/index.php">เทคแคร์</a></li>
+      <li class="link"><a href="../Health/index.html">คลินิกรักษ์ยิ้ม</a></li>
+      <li class="link"><a href="../Volunteer/volunteer.php">ข่าวสารและกิจกรรม</a></li>
+      <li class="link"><a href="../Problem/add-new.php">รายงานปัญหา</a></li>
+      <li class="link"><a href="../Register/register.php">ข้อมูลนักเรียน</a></li>
+    </ul>
+    <div class="menu-icon">
+      <i class="fa-solid fa-bars" onclick="toggleMenu()"></i>
+    </div>
+  </nav>
     <div class="bull">
         <h1><b>PUBLIC RELATION</b></h1>
     </div>
-    <nav>
-        <select id="activity-select" onchange="navigateToSection()">
-            <option value="">เลือกกิจกรรม</option>
-            <optgroup label="ข่าวสารทางการแพทย์">
-                <option value="volunteer1">ฉีดวัคซีนไข้หวัดใหญ่</option>
-                <option value="volunteer2">บริจาคเลือด</option>
-            </optgroup>
-            <optgroup label="กิจกรรมฝึกงาน">
-                <option value="internship1">ฝึกงานที่บริษัท ABC</option>
-                <option value="internship2">ฝึกงานในโรงพยาบาล</option>
-            </optgroup>
-            <optgroup label="กิจกรรมจากภายนอก">
-                <option value="external1">งานสัมมนาวิชาการ</option>
-                <option value="external2">งานแสดงสินค้านวัตกรรม</option>
-            </optgroup>
-        </select>
-    </nav>
     <main>
         <section id="volunteer">
             <h2>ข่าวสารทางการแพทย์</h2>
@@ -334,5 +90,17 @@
         <p>&copy; SMART MEDICAL ROOM FOR BANNASAN SCHOOL </p>
     </footer>
 </body>
+<script>
+    let menuList = document.getElementById("menuList")
+    menuList.style.maxHeight = "0px";
 
+    function toggleMenu() {
+      if (menuList.style.maxHeight == "0px") {
+        menuList.style.maxHeight = "300px";
+      } else {
+        menuList.style.maxHeight = "0px";
+      }
+    }
+  </script>
+  <script src="https://kit.fontawesome.com/f8e1a90484.js" crossorigin="anonymous"></script>
 </html>
