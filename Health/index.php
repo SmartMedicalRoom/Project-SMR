@@ -69,14 +69,23 @@ $conn->close();
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@100..900&display=swap" rel="stylesheet">
+    <style>
+        body {
+    background-image: url(picture.jpg);
+      background-position: 50% 50%;
+      background-size: cover;
+      background-repeat: no-repeat;
+      transition: all 0.5s ease;
 
+}
+    </style>
 </head>
 
 <body>
     <nav class="navbar">
         <div class="logo_item">
             <i class="bx bx-menu" id="sidebarOpen"></i>
-            <img src="images/logo.png" alt=""></i>SMART MEDICAL ROOM
+            <img src="Logo SMR.png" alt=""></i>SMART MEDICAL ROOM
         </div>
         <div class="navbar_content">
             <i class="bi bi-grid"></i>

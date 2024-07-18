@@ -9,13 +9,34 @@
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
     <title>Side Navigation Bar in HTML CSS JavaScript</title>
     <link rel="stylesheet" href="index.css" />
+    <style>
+        body {
+            background-image: url(picture.jpg);
+            background-position: 50% 50%;
+            background-size: cover;
+            background-repeat: no-repeat;
+            transition: all 0.5s ease;
+        }
+
+        .navbar img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+        }
+        body.dark {
+            --white-color: #a4a4a4;
+            --blue-color: #fff;
+            --grey-color: #f2f2f2;
+            --grey-color-light: #c8fffd;
+        }
+    </style>
 </head>
 
 <body>
     <nav class="navbar">
         <div class="logo_item">
             <i class="bx bx-menu" id="sidebarOpen"></i>
-            <img src="images/logo.png" alt=""></i>SMART MEDICAL ROOM
+            <img src="Logo SMR.png" alt=""></i>SMART MEDICAL ROOM
         </div>
         <div class="navbar_content">
             <i class="bi bi-grid"></i>
@@ -26,38 +47,15 @@
     <nav class="sidebar">
         <div class="menu_content">
             <ul class="menu_items">
-                <div class="menu_title menu_dahsboard"></div>
-                <li class="item">
-                    <div href="#" class="nav_link submenu_item">
-                        <span class="navlink_icon">
-                            <box-icon name='home-circle' type='solid'></box-icon>
-                        </span>
-                        <span class="navlink">Home</span>
-                        <i class="bx bx-chevron-right arrow-left"></i>
-                    </div>
-                    <ul class="menu_items submenu">
-                        <a href="../login_page/home.php" class="nav_link sublink">HOME PAGE</a>
-                    </ul>
-                </li>
-                <li class="item">
-                    <div href="#" class="nav_link submenu_item">
-                        <span class="navlink_icon">
-                            <box-icon type='solid' name='log-in-circle'></box-icon>
-                        </span>
-                        <span class="navlink">ออกจากระบบ</span>
-                        <i class="bx bx-chevron-right arrow-left"></i>
-                    </div>
-
-                    <ul class="menu_items submenu">
-                        <a href="../login_page/logout.php" class="nav_link sublink">ออกจากระบบ</a>
-                    </ul>
-                </li>
-                <!-- end -->
-            </ul>
-
-            <ul class="menu_items">
                 <div class="menu_title menu_editor"></div>
-
+                <li class="item">
+                    <a href="../login_page/home.php" class="nav_link">
+                        <span class="navlink_icon">
+                        <box-icon name='home-circle' type='solid'></box-icon>
+                        </span>
+                        <span class="navlink">หน้าหลัก</span>
+                    </a>
+                </li>
                 <li class="item">
                     <a href="../Appointment/index.php" class="nav_link">
                         <span class="navlink_icon">
@@ -101,11 +99,11 @@
                     </a>
                 </li>
                 <li class="item">
-                    <a href="../Register/register.php" class="nav_link">
+                    <a href="../login_page/logout.php" class="nav_link">
                         <span class="navlink_icon">
-                            <box-icon name='user-account' type='solid'></box-icon>
+                        <box-icon type='solid' name='log-in-circle'></box-icon>
                         </span>
-                        <span class="navlink">สมัครสมาชิก</span>
+                        <span class="navlink">ออกจากระบบ</span>
                     </a>
                 </li>
             </ul>
@@ -117,7 +115,7 @@
                     <i class='bx bx-log-in'></i>
                 </div>
                 <div class="bottom collapse_sidebar">
-                    <span> Collapse</span>
+                    <span>TAP</span>
                     <i class='bx bx-log-out'></i>
                 </div>
             </div>

@@ -4,18 +4,18 @@ include "db_conn.php";
 
 if (isset($_POST["submit"])) {
     $issue = $_POST['issue'];
- 
+
     $sql = "INSERT INTO `problem`(`ID`, `issue`) VALUES (NULL,'$issue')";
- 
+
     $result = mysqli_query($conn, $sql);
- 
+
     if ($result) {
-       header("Location: index.php?msg=New record created successfully");
+        header("Location: index.php?msg=New record created successfully");
     } else {
-       echo "Failed: " . mysqli_error($conn);
+        echo "Failed: " . mysqli_error($conn);
     }
- }
- 
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -28,14 +28,27 @@ if (isset($_POST["submit"])) {
     <!-- Boxicons CSS -->
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
     <title>Side Navigation Bar in HTML CSS JavaScript</title>
-    <link rel="stylesheet" href="index.css" />
+    <link rel="stylesheet" href="add.css" />
+    <style>
+        .navbar img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+        }
+        body.dark {
+            --white-color: #a4a4a4;
+            --blue-color: #fff;
+            --grey-color: #f2f2f2;
+            --grey-color-light: #c8fffd;
+        }
+    </style>
 </head>
 
 <body>
     <nav class="navbar">
         <div class="logo_item">
             <i class="bx bx-menu" id="sidebarOpen"></i>
-            <img src="images/logo.png" alt=""></i>SMART MEDICAL ROOM
+            <img src="Logo SMR1.png" alt=""></i>SMART MEDICAL ROOM
         </div>
         <div class="navbar_content">
             <i class="bi bi-grid"></i>
@@ -144,7 +157,7 @@ if (isset($_POST["submit"])) {
         </div>
     </nav>
     <div class="form-container">
-        <form  action="" method="POST">
+        <form action="" method="POST">
             <h2>แจ้งปัญหา</h2>
             <div class="input-group">
                 <textarea name="issue" placeholder="รายงานปัญหาในการใช้เว็ป" class="form-control" rows="4" cols="53"></textarea>
@@ -212,4 +225,5 @@ if (isset($_POST["submit"])) {
 </script>
 <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
 <script src="https://kit.fontawesome.com/f8e1a90484.js" crossorigin="anonymous"></script>
+
 </html>

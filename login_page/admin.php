@@ -39,8 +39,10 @@
       height: 70px;
     }
 
-    .logo {
-      color: #fff;
+    .logo img{
+      width: 55px;
+      height: 55px;
+      border-radius: 30%;
     }
 
     nav ul {
@@ -188,7 +190,7 @@
 <body>
   <nav>
     <div class="logo">
-      <h1>Logo</h1>
+    <img src="SMR.jpg" alt="">
     </div>
     <ul id="menuList">
       <li class="link"><a href="../Show_data/showdata.php">ข้อมูลบุคลากร</a></li>

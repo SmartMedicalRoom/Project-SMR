@@ -69,14 +69,35 @@ $conn->close();
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@100..900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-image: url(picture.jpg);
+            background-position: 50% 50%;
+            background-size: cover;
+            background-repeat: no-repeat;
+            transition: all 0.5s ease;
 
+        }
+
+        .navbar img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+        }
+        body.dark {
+            --white-color: #a4a4a4;
+            --blue-color: #fff;
+            --grey-color: #f2f2f2;
+            --grey-color-light: #c8fffd;
+        }
+    </style>
 </head>
 
 <body>
     <nav class="navbar">
         <div class="logo_item">
             <i class="bx bx-menu" id="sidebarOpen"></i>
-            <img src="images/logo.png" alt=""></i>SMART MEDICAL ROOM
+            <img src="Logo SMR.png" alt=""></i>SMART MEDICAL ROOM
         </div>
         <div class="navbar_content">
             <i class="bi bi-grid"></i>
@@ -161,14 +182,6 @@ $conn->close();
                         <span class="navlink">รายงานปัญหา</span>
                     </a>
                 </li>
-                <li class="item">
-                    <a href="../Register/register.php" class="nav_link">
-                        <span class="navlink_icon">
-                            <box-icon name='user-account' type='solid'></box-icon>
-                        </span>
-                        <span class="navlink">สมัครสมาชิก</span>
-                    </a>
-                </li>
             </ul>
 
             <!-- Sidebar Open / Close -->
@@ -178,7 +191,7 @@ $conn->close();
                     <i class='bx bx-log-in'></i>
                 </div>
                 <div class="bottom collapse_sidebar">
-                    <span> Collapse</span>
+                    <span>TAP</span>
                     <i class='bx bx-log-out'></i>
                 </div>
             </div>
@@ -203,12 +216,12 @@ $conn->close();
             </div>
             <button type="submit">คำนวณค่าดัชนีมวลกาย</button>
             <div class="echo">
-            <?php if (!empty($success_message)) {
-                echo "<p class='success'>$success_message</p>";
-            } ?>
-            <?php if (!empty($error_message)) {
-                echo "<p class='error'>$error_message</p>";
-            } ?>
+                <?php if (!empty($success_message)) {
+                    echo "<p class='success'>$success_message</p>";
+                } ?>
+                <?php if (!empty($error_message)) {
+                    echo "<p class='error'>$error_message</p>";
+                } ?>
             </div>
         </form>
     </div>

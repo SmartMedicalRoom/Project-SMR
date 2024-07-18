@@ -131,22 +131,19 @@ include "db_conn.php";
 <body>
 <nav>
     <div class="logo">
-      <h1>Logo</h1>
+      <h2>ข้อมูลยาภายในคลังยา</h2>
     </div>
     <ul id="menuList">
       <li class="link"><a href="../Show_data/showdata.php">ข้อมูลบุคลากร</a></li>
       <li class="link"><a href="../stock/index.php">ข้อมูลคลังยา</a></li>
       <li class="link"><a href="../Problem/index.php">แจ้งปัญหา</a></li>
       <li class="link"><a href="../Health/addnew.php">เคสล่าสุด</a></li>
+      <li class="link"><a href="../login_page/admin.php">หน้าหลัก</a></li>
     </ul>
     <div class="menu-icon">
       <i class="fa-solid fa-bars" onclick="toggleMenu()"></i>
     </div>
   </nav>
-  <section class="head">
-    <h1>ข้อมูลยาภายในคลังยา</h1>
-  </section>
-
   <div class="container">
     <?php
     if (isset($_GET["msg"])) {

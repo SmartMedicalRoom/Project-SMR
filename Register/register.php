@@ -9,13 +9,36 @@
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
     <title>Side Navigation Bar in HTML CSS JavaScript</title>
     <link rel="stylesheet" href="style.css" />
+    <style>
+        body {
+            background-image: url(picture.jpg);
+            background-position: 50% 50%;
+            background-size: cover;
+            background-repeat: no-repeat;
+            transition: all 0.5s ease;
+
+        }
+
+        .navbar img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+        }
+
+        body.dark {
+            --white-color: #a4a4a4;
+            --blue-color: #fff;
+            --grey-color: #f2f2f2;
+            --grey-color-light: #c8fffd;
+        }
+    </style>
 </head>
 
 <body>
     <nav class="navbar">
         <div class="logo_item">
             <i class="bx bx-menu" id="sidebarOpen"></i>
-            <img src="images/logo.png" alt=""></i>SMART MEDICAL ROOM
+            <img src="Logo SMR1.png" alt=""></i>SMART MEDICAL ROOM
         </div>
         <div class="navbar_content">
             <i class="bi bi-grid"></i>
@@ -143,10 +166,10 @@
                 <input type="date" placeholder="วัน/เดือน/ปีเกิด" id="dob" name="dob" required>
             </div>
             <div class="input-group">
-            <input type="text" placeholder="เลขประจำตัวบัตรประชาชน" id="idcard" name="idcard" required>
+                <input type="text" placeholder="เลขประจำตัวบัตรประชาชน" id="idcard" name="idcard" required>
             </div>
             <div class="input-group">
-            <input type="text" placeholder="สัญชาติ" id="organization" name="organization" required>
+                <input type="text" placeholder="สัญชาติ" id="organization" name="organization" required>
             </div>
             <div class="input-group">
                 <i class="fas fa-flag"></i>

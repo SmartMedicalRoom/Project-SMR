@@ -14,11 +14,19 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@100..900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="gpt.css">
+  <style>
+      .logo img {
+      width: 55px;
+      height: 55px;
+      border-radius: 30%;
+    }
+
+  </style>
 </head>
 <body>
 <nav>
     <div class="logo">
-      <h1>Logo</h1>
+    <img src="SMR.jpg" alt="">
     </div>
     <ul id="menuList">
       <li class="link"><a href="../Appointment/index.php">ขอรับบริการ</a></li>
@@ -27,6 +35,7 @@
       <li class="link"><a href="../Volunteer/volunteer.php">ข่าวสารและกิจกรรม</a></li>
       <li class="link"><a href="../Problem/add-new.php">รายงานปัญหา</a></li>
       <li class="link"><a href="../Register/register.php">ข้อมูลนักเรียน</a></li>
+      <li class="link"><a href="../login_page/home.php">หน้าหลัก</a></li>
     </ul>
     <div class="menu-icon">
       <i class="fa-solid fa-bars" onclick="toggleMenu()"></i>

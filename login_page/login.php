@@ -7,122 +7,44 @@ session_start();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
-    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.4.0/fonts/remixicon.css" rel="stylesheet" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@100..900&display=swap" rel="stylesheet">
+    <title>Login Form | Dan Aleko</title>
+    <link rel="stylesheet" href="login.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@100..900&display=swap" rel="stylesheet">
     <style>
-        body {
-            background-image: url('picture.jpg');
-            font-family: "Noto Sans Thai", sans-serif;
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            backdrop-filter: blur(4px);
-            height: 100vh;
-            width: 100vw;
-            overflow: hidden;
-        }
-
-        .container {
-            max-width: 400px;
-            margin-top: 100px;
-            padding: 20px;
-            background-color: #ffffff;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            text-align: center;
-            position: relative;
-            left: 500px;
-        }
-
-        h2 {
-            margin-bottom: 20px;
-        }
-
-        .form-label {
-            font-weight: bold;
-            text-align: left;
-            display: block;
-        }
-
-        .form-control {
-            margin-bottom: 15px;
-            width: 100%;
-            padding: 10px;
-            border: 1px solid #ced4da;
-            border-radius: 5px;
-        }
-
-        .btn-primary {
-            width: 100%;
-            background-color: #007bff;
-            color: white;
-            border: none;
-            padding: 10px;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        .btn-primary:hover {
-            background-color: #0056b3;
-        }
-
-        a {
-            display: block;
-            margin-top: 20px;
-            text-decoration: none;
-            color: #007bff;
-        }
-
-        a:hover {
-            text-decoration: underline;
-        }
-
-        .error {
-            color: red;
-            margin-bottom: 15px;
-        }
+        
+  body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background:url(BG.png);
+    background-size: cover;
+    background-position: center;
+  }
     </style>
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            const form = document.querySelector("form");
-            form.addEventListener("submit", function(event) {
-                const username = form.querySelector("input[name='username']").value;
-                const password = form.querySelector("input[name='password']").value;
-                if (username.length < 5 || password.length < 5) {
-                    event.preventDefault();
-                    alert("Username and password must be at least 5 characters long.");
-                }
-            });
-        });
-    </script>
 </head>
 
 <body>
-    <div class="container">
-        <h2>ลงชื่อเข้าใช้งาน</h2>
+    <div class="wrapper">
         <form method="POST" action="login_check.php">
-            <div class="mb-3">
-                <label for="username" class="form-label">Username</label>
+            <h1>ลงชื่อเข้าใช้งาน</h1>
+            <div class="input-box">
                 <input type="text" name="username" maxlength="10" class="form-control" placeholder="username" required>
+                <i class='bx bxs-user'></i>
             </div>
-            <div class="mb-3">
-                <label for="password" class="form-label">Password</label>
+            <div class="input-box">
                 <input type="password" name="password" class="form-control" placeholder="password" required>
+                <i class='bx bxs-lock-alt'></i>
             </div>
-            <?php
-            if (isset($_SESSION["error"])) {
-                echo '<div class="error">' . $_SESSION["error"] . '</div>';
-            }
-            ?>
             <button type="submit" name="submit" class="btn btn-primary">ลงชื่อเข้าใช้งาน</button>
+            <div class="register-link">
+                <p>สร้างบัญชีใหม่ <a href="register.php">สมัครสมาชิก</a></p>
+            </div>
+
         </form>
-        <a href="register.php">สมัครสมชิก</a>
     </div>
 </body>
 

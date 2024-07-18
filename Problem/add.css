@@ -22,18 +22,13 @@ body, html {
 }
 body {
     background-image: url(picture.jpg);
+    background-position: 50% 50%;
     background-size: cover;
     background-repeat: no-repeat;
     transition: all 0.5s ease;
 }
 body.dark {
   background-color: #333;
-}
-body.dark {
-  --white-color: #333;
-  --blue-color: #fff;
-  --grey-color: #f2f2f2;
-  --grey-color-light: #aaa;
 }
 
 /* navbar */
@@ -58,11 +53,6 @@ body.dark {
   font-size: 22px;
   font-weight: 500;
   color: var(--blue-color);
-}
-.navbar img {
-  width: 35px;
-  height: 35px;
-  border-radius: 50%;
 }
 .search_bar {
   height: 47px;
@@ -303,7 +293,7 @@ button {
     cursor: pointer;
     font-size: 16px;
 }
-@media screen and (max-width: 768px) {
+@media only screen and (max-width: 768px) {
   #sidebarOpen {
     font-size: 25px;
     display: block;
@@ -321,7 +311,7 @@ button {
     left: -100%;
   }
   .form-container{
-    width: 400px;
+    width: 300px;
 }
   
 }
@@ -336,10 +326,10 @@ button {
 }
 @media screen and (max-width: 1024px){
     .form-container{
-        width: 500px;
+        width: 400px;
     }
 }
-@media screen and (max-width: 1680px) {
+@media only screen and (max-width: 1680px) {
     .form-container{
         width: 400px;
     }

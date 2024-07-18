@@ -22,13 +22,19 @@
             }
         }
     </script>
-   
+   <style>
+        .logo img {
+            width: 55px;
+            height: 55px;
+            border-radius: 30%;
+        }
+    </style>
 </head>
 
 <body>
 <nav>
     <div class="logo">
-      <h1>Logo</h1>
+    <img src="SMR.jpg" alt="">
     </div>
     <ul id="menuList">
       <li class="link"><a href="../Appointment/index.php">ขอรับบริการ</a></li>
@@ -37,14 +43,12 @@
       <li class="link"><a href="../Volunteer/volunteer.php">ข่าวสารและกิจกรรม</a></li>
       <li class="link"><a href="../Problem/add-new.php">รายงานปัญหา</a></li>
       <li class="link"><a href="../Register/register.php">ข้อมูลนักเรียน</a></li>
+      <li class="link"><a href="../login_page/home.php">หน้าหลักของผู้ใช้งาน</a></li>
     </ul>
     <div class="menu-icon">
       <i class="fa-solid fa-bars" onclick="toggleMenu()"></i>
     </div>
   </nav>
-    <div class="bull">
-        <h1><b>PUBLIC RELATION</b></h1>
-    </div>
     <main>
         <section id="volunteer">
             <h2>ข่าวสารทางการแพทย์</h2>

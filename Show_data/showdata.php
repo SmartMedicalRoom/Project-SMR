@@ -145,7 +145,9 @@
         button[type="submit"]:hover {
             background-color: #2980b9;
         }
-
+        .navbar_tt{
+           align-items: center;
+        }
         @media only screen and (max-width: 768px) {
             nav ul {
                 position: absolute;
@@ -178,21 +180,19 @@
 <body>
     <nav>
         <div class="logo">
-            <h1>Logo</h1>
+        <h1>ข้อมูลบุคลากร</h1>
         </div>
         <ul id="menuList">
             <li class="link"><a href="../Show_data/showdata.php">ข้อมูลบุคลากร</a></li>
             <li class="link"><a href="../stock/index.php">ข้อมูลคลังยา</a></li>
             <li class="link"><a href="../Problem/index.php">แจ้งปัญหา</a></li>
             <li class="link"><a href="../Health/addnew.php">เคสล่าสุด</a></li>
+            <li class="link"><a href="../login_page/admin.php">หน้าหลัก</a></li>
         </ul>
         <div class="menu-icon">
             <i class="fa-solid fa-bars" onclick="toggleMenu()"></i>
         </div>
     </nav>
-    <section class="navbar">
-        <h1>ข้อมูลบุคลากรและนักเรียน</h1>
-    </section>
 
     <div class="box">
         <form action="showdata.php" method="POST" class="container">
