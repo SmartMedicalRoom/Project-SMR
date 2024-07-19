@@ -32,11 +32,11 @@ session_start();
         <form method="POST" action="login_check.php">
             <h1>ลงชื่อเข้าใช้งาน</h1>
             <div class="input-box">
-                <input type="text" name="username" maxlength="10" class="form-control" placeholder="username" required>
+                <input type="text" name="username" maxlength="10" class="form-control" placeholder="ชื่อผู้ใช้งาน" required>
                 <i class='bx bxs-user'></i>
             </div>
             <div class="input-box">
-                <input type="password" name="password" class="form-control" placeholder="password" required>
+                <input type="password" name="password" class="form-control" placeholder="รหัสผู้ใช้งาน" required>
                 <i class='bx bxs-lock-alt'></i>
             </div>
             <button type="submit" name="submit" class="btn btn-primary">ลงชื่อเข้าใช้งาน</button>

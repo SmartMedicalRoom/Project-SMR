@@ -59,38 +59,15 @@ if (isset($_POST["submit"])) {
     <nav class="sidebar">
         <div class="menu_content">
             <ul class="menu_items">
-                <div class="menu_title menu_dahsboard"></div>
+            <div class="menu_title menu_editor"></div>
                 <li class="item">
-                    <div href="#" class="nav_link submenu_item">
+                    <a href="../login_page/home.php" class="nav_link">
                         <span class="navlink_icon">
-                            <box-icon name='home-circle' type='solid'></box-icon>
+                        <box-icon name='home-circle' type='solid'></box-icon>
                         </span>
-                        <span class="navlink">Home</span>
-                        <i class="bx bx-chevron-right arrow-left"></i>
-                    </div>
-                    <ul class="menu_items submenu">
-                        <a href="../login_page/home.php" class="nav_link sublink">HOME PAGE</a>
-                    </ul>
+                        <span class="navlink">หน้าหลัก</span>
+                    </a>
                 </li>
-                <li class="item">
-                    <div href="#" class="nav_link submenu_item">
-                        <span class="navlink_icon">
-                            <box-icon type='solid' name='log-in-circle'></box-icon>
-                        </span>
-                        <span class="navlink">ออกจากระบบ</span>
-                        <i class="bx bx-chevron-right arrow-left"></i>
-                    </div>
-
-                    <ul class="menu_items submenu">
-                        <a href="../login_page/logout.php" class="nav_link sublink">ออกจากระบบ</a>
-                    </ul>
-                </li>
-                <!-- end -->
-            </ul>
-
-            <ul class="menu_items">
-                <div class="menu_title menu_editor"></div>
-
                 <li class="item">
                     <a href="../Appointment/index.php" class="nav_link">
                         <span class="navlink_icon">
@@ -134,11 +111,11 @@ if (isset($_POST["submit"])) {
                     </a>
                 </li>
                 <li class="item">
-                    <a href="../Register/register.php" class="nav_link">
+                    <a href="../login_page/logout.php" class="nav_link">
                         <span class="navlink_icon">
-                            <box-icon name='user-account' type='solid'></box-icon>
+                        <box-icon type='solid' name='log-in-circle'></box-icon>
                         </span>
-                        <span class="navlink">สมัครสมาชิก</span>
+                        <span class="navlink">ออกจากระบบ</span>
                     </a>
                 </li>
             </ul>

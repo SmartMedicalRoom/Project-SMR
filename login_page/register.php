@@ -30,19 +30,28 @@
         <form method="POST" action="insert_register.php">
             <h1>สมัครสมาชิก</h1>
             <div class="input-box">
-                <input type="text" id="firstname" name="firstname" placeholder="Username" required>
+                <input type="text" id="firstname" name="firstname" placeholder="ชื่อจริง" required>
             </div>
             <div class="input-box">
-                <input type="text" id="lastname" name="lastname" placeholder="lastname" required>
+                <input type="text" id="lastname" name="lastname" placeholder="นามสกุล" required>
             </div>
             <div class="input-box">
-                <input type="number" id="phone" name="phone" maxlength="10" placeholder="Phone" required>
+                <input type="number" id="phone" name="phone" maxlength="10" placeholder="เบอร์โทรศัพท์" required>
             </div>
             <div class="input-box">
-                <input type="text" id="username" name="username" maxlength="10" placeholder="Username" required>
+                <input type="text" id="medicine" name="medicine" placeholder="ยาที่แพ้" required>
             </div>
             <div class="input-box">
-                <input type="password" id="password" name="password" placeholder="Password" required>
+                <input type="number" id="height" name="height" placeholder="ส่วนสูง" required>
+            </div>
+            <div class="input-box">
+                <input type="number" id="weight" name="weight"  placeholder="น้ำหนัก" required>
+            </div>
+            <div class="input-box">
+                <input type="text" id="username" name="username" maxlength="10" placeholder="ชื่อผู้ใช้งาน" required>
+            </div>
+            <div class="input-box">
+                <input type="password" id="password" name="password" placeholder="รหัสผู้ใช้งาน" required>
             </div>
             <button type="submit" name="submit" class="btn">บันทึก</button>
             <button type="reset" name="cancel" class="btn cancel">ยกเลิก</button>

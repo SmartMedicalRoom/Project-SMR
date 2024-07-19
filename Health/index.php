@@ -71,13 +71,30 @@ $conn->close();
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@100..900&display=swap" rel="stylesheet">
     <style>
         body {
-    background-image: url(picture.jpg);
-      background-position: 50% 50%;
-      background-size: cover;
-      background-repeat: no-repeat;
-      transition: all 0.5s ease;
+            background-image: url(picture.jpg);
+            background-position: 50% 50%;
+            background-size: cover;
+            background-repeat: no-repeat;
+            transition: all 0.5s ease;
 
-}
+        }
+
+        .navbar img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+        }
+        
+        body.dark {
+            --white-color: #a4a4a4;
+            --blue-color: #fff;
+            --grey-color: #f2f2f2;
+            --grey-color-light: #c8fffd;
+        }
+        .form-container img {
+            position: relative;
+            left: 60px;
+        }
     </style>
 </head>
 
@@ -96,88 +113,65 @@ $conn->close();
     <nav class="sidebar">
         <div class="menu_content">
             <ul class="menu_items">
-                <div class="menu_title menu_dahsboard"></div>
-                <li class="item">
-                    <div href="#" class="nav_link submenu_item">
-                        <span class="navlink_icon">
-                            <box-icon name='home-circle' type='solid'></box-icon>
-                        </span>
-                        <span class="navlink">Home</span>
-                        <i class="bx bx-chevron-right arrow-left"></i>
-                    </div>
-                    <ul class="menu_items submenu">
-                        <a href="../login_page/home.php" class="nav_link sublink">HOME PAGE</a>
-                    </ul>
-                </li>
-                <li class="item">
-                    <div href="#" class="nav_link submenu_item">
-                        <span class="navlink_icon">
-                            <box-icon type='solid' name='log-in-circle'></box-icon>
-                        </span>
-                        <span class="navlink">ออกจากระบบ</span>
-                        <i class="bx bx-chevron-right arrow-left"></i>
-                    </div>
+            <div class="menu_title menu_editor"></div>
+          <li class="item">
+              <a href="../login_page/home.php" class="nav_link">
+                  <span class="navlink_icon">
+                  <box-icon name='home-circle' type='solid'></box-icon>
+                  </span>
+                  <span class="navlink">หน้าหลัก</span>
+              </a>
+          </li>
+          <li class="item">
+              <a href="../Appointment/index.php" class="nav_link">
+                  <span class="navlink_icon">
+                      <box-icon name='capsule' type='solid'></box-icon>
+                  </span>
+                  <span class="navlink">ขอรับบริการ</span>
+              </a>
+          </li>
+          <!-- End -->
 
-                    <ul class="menu_items submenu">
-                        <a href="../login_page/logout.php" class="nav_link sublink">ออกจากระบบ</a>
-                    </ul>
-                </li>
-                <!-- end -->
-            </ul>
-
-            <ul class="menu_items">
-                <div class="menu_title menu_editor"></div>
-
-                <li class="item">
-                    <a href="../Appointment/index.php" class="nav_link">
-                        <span class="navlink_icon">
-                            <box-icon name='capsule' type='solid'></box-icon>
-                        </span>
-                        <span class="navlink">ขอรับบริการ</span>
-                    </a>
-                </li>
-                <!-- End -->
-
-                <li class="item">
-                    <a href="../BMi/index.php" class="nav_link">
-                        <span class="navlink_icon">
-                            <box-icon name='chat' type='solid'></box-icon>
-                        </span>
-                        <span class="navlink">เทคแคร์</span>
-                    </a>
-                </li>
-                <li class="item">
-                    <a href="../Health/index.html" class="nav_link">
-                        <span class="navlink_icon">
-                            <box-icon name='plus-medical'></box-icon>
-                        </span>
-                        <span class="navlink">คลินิกรักษ์ยิ้ม</span>
-                    </a>
-                </li>
-                <li class="item">
-                    <a href="../Volunteer/volunteer.php" class="nav_link">
-                        <span class="navlink_icon">
-                            <box-icon name='news' type='solid'></box-icon>
-                        </span>
-                        <span class="navlink">ข่าวสารและกิจกรรม</span>
-                    </a>
-                </li>
-                <li class="item">
-                    <a href="../Problem/add-new.php" class="nav_link">
-                        <span class="navlink_icon">
-                            <box-icon name='megaphone' type='solid'></box-icon>
-                        </span>
-                        <span class="navlink">รายงานปัญหา</span>
-                    </a>
-                </li>
-                <li class="item">
-                    <a href="../Register/register.php" class="nav_link">
-                        <span class="navlink_icon">
-                            <box-icon name='user-account' type='solid'></box-icon>
-                        </span>
-                        <span class="navlink">สมัครสมาชิก</span>
-                    </a>
-                </li>
+          <li class="item">
+              <a href="../BMi/index.php" class="nav_link">
+                  <span class="navlink_icon">
+                      <box-icon name='chat' type='solid'></box-icon>
+                  </span>
+                  <span class="navlink">เทคแคร์</span>
+              </a>
+          </li>
+          <li class="item">
+              <a href="../Health/index.html" class="nav_link">
+                  <span class="navlink_icon">
+                      <box-icon name='plus-medical'></box-icon>
+                  </span>
+                  <span class="navlink">คลินิกรักษ์ยิ้ม</span>
+              </a>
+          </li>
+          <li class="item">
+              <a href="../Volunteer/volunteer.php" class="nav_link">
+                  <span class="navlink_icon">
+                      <box-icon name='news' type='solid'></box-icon>
+                  </span>
+                  <span class="navlink">ข่าวสารและกิจกรรม</span>
+              </a>
+          </li>
+          <li class="item">
+              <a href="../Problem/add-new.php" class="nav_link">
+                  <span class="navlink_icon">
+                      <box-icon name='megaphone' type='solid'></box-icon>
+                  </span>
+                  <span class="navlink">รายงานปัญหา</span>
+              </a>
+          </li>
+          <li class="item">
+              <a href="../login_page/logout.php" class="nav_link">
+                  <span class="navlink_icon">
+                  <box-icon type='solid' name='log-in-circle'></box-icon>
+                  </span>
+                  <span class="navlink">ออกจากระบบ</span>
+              </a>
+          </li>
             </ul>
 
             <!-- Sidebar Open / Close -->
@@ -198,8 +192,9 @@ $conn->close();
     <div class="form-container">
         <h2>คลินิกรักษ์ยิ้ม</h2>
         <img src="images.png" alt="QR Code">
-        <p>สามารถเข้ารับคำปรึกษาคลินิครักษ์ยิ้มได้โดยแสกนคิวอาโค้ดนี้ </p>
-        <p>และสามารถขอติดต่อผู้เชี่ยวชาญได้โดยพิมพ์ ฉันต้องการติดต่อคลินิครักษ์ยิ้ม</p>
+        <p> สามารถเข้ารับคำปรึกษาคลินิครักษ์ยิ้มได้โดย แสกน</p>
+        <p>คิวอาโค้ดนี้ และสามารถขอติดต่อผู้เชี่ยวชาญได้โดยพิมพ์ ฉันต้องการติดต่อคลินิครักษ์ยิ้ม </p>
+       
     </div>
 
 

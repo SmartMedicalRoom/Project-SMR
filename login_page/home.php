@@ -157,7 +157,7 @@
     .socials span:hover {
       color: rgb(164, 164, 164);
     }
-
+    
     @media only screen and (max-width: 768px) {
       nav ul {
         position: absolute;
@@ -184,6 +184,7 @@
         transition: all 0.5s;
       }
     }
+
   </style>
 </head>
 

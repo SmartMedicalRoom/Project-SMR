@@ -84,11 +84,17 @@ $conn->close();
             height: 50px;
             border-radius: 50%;
         }
+
         body.dark {
             --white-color: #a4a4a4;
             --blue-color: #fff;
             --grey-color: #f2f2f2;
             --grey-color-light: #c8fffd;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
         }
     </style>
 </head>
@@ -108,38 +114,15 @@ $conn->close();
     <nav class="sidebar">
         <div class="menu_content">
             <ul class="menu_items">
-                <div class="menu_title menu_dahsboard"></div>
+                <div class="menu_title menu_editor"></div>
                 <li class="item">
-                    <div href="#" class="nav_link submenu_item">
+                    <a href="../login_page/home.php" class="nav_link">
                         <span class="navlink_icon">
                             <box-icon name='home-circle' type='solid'></box-icon>
                         </span>
-                        <span class="navlink">Home</span>
-                        <i class="bx bx-chevron-right arrow-left"></i>
-                    </div>
-                    <ul class="menu_items submenu">
-                        <a href="../login_page/home.php" class="nav_link sublink">HOME PAGE</a>
-                    </ul>
+                        <span class="navlink">หน้าหลัก</span>
+                    </a>
                 </li>
-                <li class="item">
-                    <div href="#" class="nav_link submenu_item">
-                        <span class="navlink_icon">
-                            <box-icon type='solid' name='log-in-circle'></box-icon>
-                        </span>
-                        <span class="navlink">ออกจากระบบ</span>
-                        <i class="bx bx-chevron-right arrow-left"></i>
-                    </div>
-
-                    <ul class="menu_items submenu">
-                        <a href="../login_page/logout.php" class="nav_link sublink">ออกจากระบบ</a>
-                    </ul>
-                </li>
-                <!-- end -->
-            </ul>
-
-            <ul class="menu_items">
-                <div class="menu_title menu_editor"></div>
-
                 <li class="item">
                     <a href="../Appointment/index.php" class="nav_link">
                         <span class="navlink_icon">
@@ -182,6 +165,14 @@ $conn->close();
                         <span class="navlink">รายงานปัญหา</span>
                     </a>
                 </li>
+                <li class="item">
+                    <a href="../login_page/logout.php" class="nav_link">
+                        <span class="navlink_icon">
+                            <box-icon type='solid' name='log-in-circle'></box-icon>
+                        </span>
+                        <span class="navlink">ออกจากระบบ</span>
+                    </a>
+                </li>
             </ul>
 
             <!-- Sidebar Open / Close -->
@@ -201,7 +192,7 @@ $conn->close();
 
     <div class="form-container">
         <form method="post" action="index.php">
-            <h2>ค่าดัชนีมวลกาย</h2>
+            <h1>ค่าดัชนีมวลกาย</h1>
 
             <button class="takecare"><a class="link" href="gpt.php">เทคแคร์</a></button>
 
@@ -212,7 +203,7 @@ $conn->close();
                 <input type="number" placeholder="ส่วนสูง (ซม.)" id="height" name="height" required>
             </div>
             <div class="input-group">
-                <input type="number" placeholder="ส่วนสูง (กก.)" id="weight" name="weight" required>
+                <input type="number" placeholder="น้ำหนัก (กก.)" id="weight" name="weight" required>
             </div>
             <button type="submit">คำนวณค่าดัชนีมวลกาย</button>
             <div class="echo">
